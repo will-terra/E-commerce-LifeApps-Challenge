@@ -28,16 +28,18 @@ O objetivo é implementar um e-commerce para venda de vestuário. O layout é co
 - [X] Visualizar detalhes do produto
 - [X] Adicionar e remover produtos do carrinho
 
+⚠️ **As imagens acima são apenas um exemplo de implementação consumindo a API e não deve servir como guia para reprodução.**
+
 ## 📋 Instruções
 
 Chegou a hora de colocar a mão na massa!
 
-- Utilize como guia [esse protótipo](https://www.figma.com/file/LY2nEotYCVuUhmwR5KmYsa/Prova-Frontend-Lifeapps)
 - Consuma a **API JSON Server** disponível neste [link](https://api-prova-frontend.solucoeslifeapps.com.br/)
 - Caso prefira durante o desenvolvimento uma versão local da api está disponível na pasta `api` do projeto e pode ser executada com o comando `npm run start`
 - Utilize React.js ou Vue.js (podendo optar pelo Next.js ou Nuxt.js)
 - Faça a componentização do seu projeto
 - Utilize o local storage para gerenciar o carrinho
+- Utilize a estrutura da api para fazer a paginação do lado do servidor
 - Por favor, inclua no README as instruções de instalação do projeto
 - Sinta-se livre para incluir quaisquer observações ou comentários que achar relevante
 
