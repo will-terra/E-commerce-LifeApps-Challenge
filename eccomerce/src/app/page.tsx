@@ -1,8 +1,12 @@
+import MainButton from "@/components/atoms/Button";
+
 export default function Home() {
   return (
     <div>
       <main>
-        <h1>Hello World</h1>
+        <MainButton ariaLabel="Hello World" size="large" variant="white">
+          Hello World
+        </MainButton>
       </main>
       <footer></footer>
     </div>
