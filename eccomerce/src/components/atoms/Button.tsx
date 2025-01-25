@@ -23,7 +23,7 @@ const MainButton: React.FC<MainButtonProps> = ({
     size === "small" ? "text-sm py-2 px-4" : "text-lg py-3 px-6"
   } ${
     variant === "black" ? "bg-black text-white" : "bg-white text-black"
-  } rounded-md`;
+  } rounded-md border border-gray-300`;
 
   if (href) {
     return (
