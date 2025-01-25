@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AppContextProvider } from "@/contexts/AppProvider";
 
 export const metadata: Metadata = {
   title: "Neish",
@@ -13,9 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="global-html">
-      <body>
-        <div className="Root">{children}</div>
-      </body>
+      <AppContextProvider>
+        <body>
+          <div className="Root">{children}</div>
+        </body>
+      </AppContextProvider>
     </html>
   );
 }

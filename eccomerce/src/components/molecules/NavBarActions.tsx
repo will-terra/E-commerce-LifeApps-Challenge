@@ -6,7 +6,7 @@ import CartCounter from "../atoms/CartCounter";
 
 const NavBarActions = () => {
   return (
-    <div className="flex justify-around items-center mx-2">
+    <div className="flex justify-around items-center mr-20">
       <SearchInput /> <ProfileIcon /> <CartIcon /> <CartCounter />
     </div>
   );
