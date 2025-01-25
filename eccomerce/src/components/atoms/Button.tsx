@@ -19,11 +19,11 @@ const MainButton: React.FC<MainButtonProps> = ({
 }) => {
   const styles = `flex justify-center items-center ${
     size === "small"
-      ? "text-sm py-2 px-4 min-w-[2rem] max-w-[7rem] "
-      : "text-lg py-3  min-w-[8rem]"
+      ? "text-sm py-1 px-4 min-w-[2rem] max-w-[7rem] "
+      : "text-lg py-2  min-w-[8rem]"
   } ${
     variant === "black" ? "bg-black text-white" : "bg-white text-black"
-  } rounded-md border border-gray-300`;
+  } rounded-md border border-black`;
 
   if (href) {
     return (
@@ -34,9 +34,9 @@ const MainButton: React.FC<MainButtonProps> = ({
   }
 
   return (
-    <button className={styles} onClick={onClick} aria-label={ariaLabel}>
+    <div className={styles} onClick={onClick} aria-label={ariaLabel}>
       {children}
-    </button>
+    </div>
   );
 };
 
