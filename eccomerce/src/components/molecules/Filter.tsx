@@ -19,7 +19,11 @@ const Filter = () => {
         className="flex gap-2"
       >
         <Radio.Root value="Todos">
-          <MainButton ariaLabel="Exibir todos os produtos" variant="white">
+          <MainButton
+            ariaLabel="Exibir todos os produtos"
+            variant="white"
+            size="large"
+          >
             Ver todos
           </MainButton>
         </Radio.Root>

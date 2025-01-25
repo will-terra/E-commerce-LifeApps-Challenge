@@ -7,7 +7,8 @@ import CartCounter from "../atoms/CartCounter";
 const NavBarActions = () => {
   return (
     <div className="flex justify-around items-center mr-20">
-      <SearchInput /> <ProfileIcon /> <CartIcon /> <CartCounter />
+      <SearchInput /> <ProfileIcon />{" "}
+      <CartIcon ariaLabel="Acessar o carrinho" /> <CartCounter />
     </div>
   );
 };

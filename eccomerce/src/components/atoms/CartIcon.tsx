@@ -1,11 +1,15 @@
 import Image from "next/image";
 import React from "react";
 
-const CartIcon = () => {
+type CartIconProps = {
+  ariaLabel: string;
+};
+
+const CartIcon = ({ ariaLabel }: CartIconProps) => {
   return (
     <div>
       <Image
-        aria-label="Acesse o carrinho"
+        aria-label={ariaLabel}
         src="/Cart.svg"
         alt="Desenho de uma bolsa"
         width={35}
