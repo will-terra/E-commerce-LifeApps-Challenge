@@ -66,6 +66,17 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   const filteredData = data.filter((item) => {
     return selectedValue !== "" ? item.category === selectedValue : item;
   });
