@@ -3,7 +3,7 @@ import "./globals.css";
 import { AppContextProvider } from "@/contexts/AppProvider";
 
 export const metadata: Metadata = {
-  title: "Neish",
+  title: "NEISH",
   description: "Plataforma de vendas de roupas",
 };
 
