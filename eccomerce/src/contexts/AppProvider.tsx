@@ -51,7 +51,7 @@ interface AppProviderProps {
 export const AppContextProvider: React.FC<AppProviderProps> = ({
   children,
 }) => {
-  const [selectedValue, setSelectedValue] = useState<string>("Todos");
+  const [selectedValue, setSelectedValue] = useState<string>("");
   const [data, setData] = useState<Product[]>([]);
   const [cart, setCart] = useState<Product[]>([]);
 

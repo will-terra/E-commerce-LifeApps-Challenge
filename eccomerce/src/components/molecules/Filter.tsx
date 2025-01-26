@@ -6,7 +6,7 @@ import { useAppContext } from "@/contexts/AppProvider";
 const Filter = () => {
   const { selectedValue, setSelectedValue } = useAppContext();
   return (
-    <section className="flex flex-col justify-center items-center gap-4 mt-4">
+    <section className="flex flex-col justify-center items-center gap-4 mt-8 mb-12">
       <h1 className="place-self-start ml-8 text-3xl font-bold">
         Veja nossa nova coleção verão 2025:
       </h1>
@@ -19,25 +19,37 @@ const Filter = () => {
       >
         <Radio.Root value="">
           <MainButton
-            ariaLabel="Exibir todos os produtos"
-            variant="white"
+            ariaLabel="Navegar por todos os produtos"
+            variant={selectedValue === "" ? "white" : "black"}
             size="large"
           >
             Ver todos
           </MainButton>
         </Radio.Root>
         <Radio.Root value="Camisetas">
-          <MainButton ariaLabel="Filtrar para apenas camisetas" size="large">
+          <MainButton
+            ariaLabel="Filtrar para apenas camisetas"
+            variant={selectedValue === "Camisetas" ? "white" : "black"}
+            size="large"
+          >
             Camisetas
           </MainButton>
         </Radio.Root>
         <Radio.Root value="Calças">
-          <MainButton ariaLabel="Filtrar para apenas calças" size="large">
+          <MainButton
+            ariaLabel="Filtrar para apenas calças"
+            variant={selectedValue === "Calças" ? "white" : "black"}
+            size="large"
+          >
             Calças
           </MainButton>
         </Radio.Root>
         <Radio.Root value="Tênis">
-          <MainButton ariaLabel="Filtrar para apenas tênis" size="large">
+          <MainButton
+            ariaLabel="Filtrar para apenas tênis"
+            variant={selectedValue === "Tênis" ? "white" : "black"}
+            size="large"
+          >
             Tênis
           </MainButton>
         </Radio.Root>
