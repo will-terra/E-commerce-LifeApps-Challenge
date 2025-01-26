@@ -1,9 +1,17 @@
-import React from "react";
+import { useAppContext } from "@/contexts/AppProvider";
 
-type Props = {};
+const CartCounter = () => {
+  const { cart } = useAppContext();
 
-const CartCounter = (props: Props) => {
-  return <p className="text-black text-[2rem] font-medium mr-3">0</p>;
+  return (
+    <>
+      {cart.length > 0 && (
+        <p className="text-black text-[2rem] font-medium mr-3">
+          {" "}
+          {cart.length}
+        </p>
+      )}
+    </>
+  );
 };
-
 export default CartCounter;
