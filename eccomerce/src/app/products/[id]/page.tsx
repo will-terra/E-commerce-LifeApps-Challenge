@@ -4,23 +4,23 @@ import Header from "@/components/atoms/Header";
 import NavBar from "@/components/organisms/NavBar";
 import ProductDetails from "@/components/organisms/ProductDetails";
 import { Product, useAppContext } from "@/contexts/AppProvider";
-import { useEffect, useState } from "react";
+import { useEffect, useState, use } from "react";
 
 interface ProductDetailsProps {
-  params: { name: string };
+  params: Promise<{ id: number }>;
 }
 
 export default function Details({ params }: ProductDetailsProps) {
-  const { name } = params;
+  const { id } = use(params);
   const { products } = useAppContext();
   const [product, setProduct] = useState<Product | null>(null);
 
   useEffect(() => {
     if (products) {
-      const foundProduct = products.find((product) => product.name === name);
+      const foundProduct = products.find((product) => product.id === id);
       setProduct(foundProduct || null);
     }
-  }, [name, products]);
+  }, [products, id]);
 
   return (
     <div>
