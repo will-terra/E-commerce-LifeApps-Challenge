@@ -39,7 +39,10 @@ const ProductCard = (props: ProductCardProps) => {
           <p className="text-lg ">{price}R$</p>
         )}
         <div className="flex gap-2 mt-2">
-          <MainButton ariaLabel={`Acessar mais detalhes de: ${name}`}>
+          <MainButton
+            href={`/products/${name}`}
+            ariaLabel={`Acessar mais detalhes de: ${name}`}
+          >
             + Detalhes{" "}
           </MainButton>
 

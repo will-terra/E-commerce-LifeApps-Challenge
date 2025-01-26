@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppContext } from "@/contexts/AppProvider";
 
 const CartCounter = () => {
@@ -6,10 +8,7 @@ const CartCounter = () => {
   return (
     <>
       {cart.length > 0 && (
-        <p className="text-black text-[2rem] font-medium mr-3">
-          {" "}
-          {cart.length}
-        </p>
+        <p className="text-black text-[2rem] font-medium mr-3">{cart.length}</p>
       )}
     </>
   );

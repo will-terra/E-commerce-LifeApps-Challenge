@@ -7,7 +7,7 @@ import {
   ReactNode,
 } from "react";
 
-interface Product {
+export interface Product {
   id: number;
   name: string;
   category: string;
@@ -21,7 +21,8 @@ interface Product {
 interface AppContextProps {
   selectedValue: string;
   setSelectedValue: (value: string) => void;
-  filteredData: Product[];
+  products: Product[];
+  filteredProducts: Product[];
   cart: Product[];
   addToCart: (product: Product) => void;
   removeFromCart: (product: Product) => void;
@@ -30,7 +31,8 @@ interface AppContextProps {
 const AppContext = createContext<AppContextProps>({
   selectedValue: "",
   setSelectedValue: () => {},
-  filteredData: [],
+  products: [],
+  filteredProducts: [],
   cart: [],
   addToCart: () => {},
   removeFromCart: () => {},
@@ -52,18 +54,18 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   children,
 }) => {
   const [selectedValue, setSelectedValue] = useState<string>("");
-  const [data, setData] = useState<Product[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [cart, setCart] = useState<Product[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchProducts = async () => {
       const response = await fetch(
         "https://api-prova-frontend.solucoeslifeapps.com.br/products"
       );
       const result = await response.json();
-      setData(Array.isArray(result) ? result : [result]);
+      setProducts(Array.isArray(result) ? result : [result]);
     };
-    fetchData();
+    fetchProducts();
   }, []);
 
   useEffect(() => {
@@ -77,7 +79,7 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const filteredData = data.filter((item) => {
+  const filteredProducts = products.filter((item) => {
     return selectedValue !== "" ? item.category === selectedValue : item;
   });
 
@@ -94,7 +96,8 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
       value={{
         selectedValue,
         setSelectedValue,
-        filteredData,
+        products,
+        filteredProducts,
         cart,
         addToCart,
         removeFromCart,
