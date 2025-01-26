@@ -1,4 +1,3 @@
-import React from "react";
 import NavBarActions from "../molecules/NavBarActions";
 
 const NavBar = () => {

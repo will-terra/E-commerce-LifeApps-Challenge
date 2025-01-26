@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import MainButton from "../atoms/Button";
 import { Radio, RadioGroup } from "@base-ui-components/react";
 import { useAppContext } from "@/contexts/AppProvider";

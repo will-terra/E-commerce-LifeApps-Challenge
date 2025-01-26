@@ -1,5 +1,4 @@
 import { useAppContext } from "@/contexts/AppProvider";
-import React from "react";
 import ProductCard from "../molecules/ProductCard";
 
 const ProductGrid = () => {

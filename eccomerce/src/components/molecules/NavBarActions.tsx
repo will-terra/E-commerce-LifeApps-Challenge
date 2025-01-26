@@ -1,4 +1,3 @@
-import React from "react";
 import SearchInput from "../atoms/SearchInput";
 import ProfileIcon from "../atoms/ProfileIcon";
 import CartIcon from "../atoms/CartIcon";

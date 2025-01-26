@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import MainButton from "../atoms/Button";
 import CartIcon from "../atoms/CartIcon";
 

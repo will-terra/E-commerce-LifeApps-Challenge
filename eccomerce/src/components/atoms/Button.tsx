@@ -1,5 +1,3 @@
-import React from "react";
-
 type MainButtonProps = {
   children: React.ReactNode;
   ariaLabel: string;
