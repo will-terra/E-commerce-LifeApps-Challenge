@@ -15,7 +15,7 @@ const MainButton: React.FC<MainButtonProps> = ({
   variant = "black",
   href,
 }) => {
-  const styles = `flex justify-center items-center ${
+  const styles = `flex justify-center items-center cursor-pointer ${
     size === "small"
       ? "text-sm py-1 px-4 min-w-[2rem] max-w-[7rem] "
       : "text-lg py-2  min-w-[8rem]"
