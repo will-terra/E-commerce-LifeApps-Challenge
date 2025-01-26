@@ -18,7 +18,7 @@ const Filter = () => {
         onValueChange={(value) => setSelectedValue(value as string)}
         className="flex gap-2"
       >
-        <Radio.Root value="Todos">
+        <Radio.Root value="">
           <MainButton
             ariaLabel="Exibir todos os produtos"
             variant="white"

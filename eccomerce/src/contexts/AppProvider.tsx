@@ -21,13 +21,13 @@ interface Product {
 interface AppContextProps {
   selectedValue: string;
   setSelectedValue: (value: string) => void;
-  data: Product[];
+  filteredData: Product[];
 }
 
 const AppContext = createContext<AppContextProps>({
-  selectedValue: "Todos",
+  selectedValue: "",
   setSelectedValue: () => {},
-  data: [],
+  filteredData: [],
 } as AppContextProps);
 
 export const useAppContext = (): AppContextProps => {
@@ -59,8 +59,14 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
     fetchData();
   }, []);
 
+  const filteredData = data.filter((item) => {
+    return selectedValue !== "" ? item.category === selectedValue : item;
+  });
+
   return (
-    <AppContext.Provider value={{ selectedValue, setSelectedValue, data }}>
+    <AppContext.Provider
+      value={{ selectedValue, setSelectedValue, filteredData }}
+    >
       {children}
     </AppContext.Provider>
   );

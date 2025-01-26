@@ -3,10 +3,10 @@ import React from "react";
 import ProductCard from "../molecules/ProductCard";
 
 const ProductGrid = () => {
-  const { data } = useAppContext();
+  const { filteredData } = useAppContext();
   return (
     <section className="grid grid-cols-3  w-fit gap-12 place-content-center mx-auto my-4">
-      {data.map((item) => (
+      {filteredData.map((item) => (
         <ProductCard key={item.id} {...item} />
       ))}
     </section>
