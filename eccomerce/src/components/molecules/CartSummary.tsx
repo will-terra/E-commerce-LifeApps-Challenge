@@ -7,7 +7,7 @@ const CartSummary = () => {
   const freeShipping = cartTotal > 199;
 
   return (
-    <div className="self-start border border-gray-500 max-w-80 px-12 py-8 m-4 bg-gray-300 rounded-md ">
+    <div className="self-start border border-gray-500 max-w-80 px-12 py-8 m-4 bg-gray-200 rounded-md ">
       <h2 className="uppercase font-semibold text-xl mb-4 text-center">
         Resumo do pedido:
       </h2>

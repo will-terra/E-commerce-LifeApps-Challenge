@@ -31,7 +31,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
       />
       <div className="flex flex-col justify-start max-w-[50%] gap-4 p-4 mt-8">
         <h1 className="text-4xl font-black text center">{name}</h1>
-        <p className="bg-slate-500 w-fit text-white py-2 px-4 border border-black rounded-full">
+        <p className="bg-gray-300 w-fit text-black py-2 px-4 border border-gray-500 rounded-full">
           {category}{" "}
         </p>
 

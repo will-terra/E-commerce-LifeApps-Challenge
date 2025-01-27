@@ -21,7 +21,7 @@ export default function Details({ params }: ProductDetailsProps) {
   }, [products, id]);
 
   return (
-    <main>
+    <main className="mt-4">
       {product ? (
         <ProductDetails product={product} />
       ) : (
