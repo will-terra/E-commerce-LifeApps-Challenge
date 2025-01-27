@@ -1,7 +1,5 @@
 "use client";
 
-import Header from "@/components/atoms/Header";
-import NavBar from "@/components/organisms/NavBar";
 import ProductDetails from "@/components/organisms/ProductDetails";
 import { Product, useAppContext } from "@/contexts/AppProvider";
 import { useEffect, useState, use } from "react";
@@ -23,16 +21,12 @@ export default function Details({ params }: ProductDetailsProps) {
   }, [products, id]);
 
   return (
-    <div>
-      <main>
-        <Header />
-        <NavBar />
-        {product ? (
-          <ProductDetails product={product} />
-        ) : (
-          <div>Carregando o produto...</div>
-        )}
-      </main>
-    </div>
+    <main>
+      {product ? (
+        <ProductDetails product={product} />
+      ) : (
+        <div>Carregando o produto...</div>
+      )}
+    </main>
   );
 }

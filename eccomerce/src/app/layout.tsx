@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AppContextProvider } from "@/contexts/AppProvider";
+import Header from "@/components/atoms/Header";
+import NavBar from "@/components/organisms/NavBar";
 
 export const metadata: Metadata = {
   title: "NEISH",
@@ -16,6 +18,8 @@ export default function RootLayout({
     <html lang="pt-BR" className="global-html">
       <AppContextProvider>
         <body>
+          <Header />
+          <NavBar />
           <div className="Root">{children}</div>
         </body>
       </AppContextProvider>
