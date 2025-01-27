@@ -121,7 +121,7 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
 
   const cartTotal = cart.reduce((acc, item) => {
     const price = item.promotional_price ?? item.price;
-    return acc + price;
+    return acc + price * item.quantity;
   }, 0);
 
   return (
