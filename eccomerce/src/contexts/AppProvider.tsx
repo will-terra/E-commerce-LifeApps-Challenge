@@ -18,12 +18,17 @@ export interface Product {
   description: string;
 }
 
+export interface CartItem extends Product {
+  quantity: number;
+}
+
 interface AppContextProps {
   selectedValue: string;
   setSelectedValue: (value: string) => void;
   products: Product[];
   filteredProducts: Product[];
-  cart: Product[];
+  cart: CartItem[];
+  cartTotal: number;
   addToCart: (product: Product) => void;
   removeFromCart: (product: Product) => void;
 }
@@ -34,6 +39,7 @@ const AppContext = createContext<AppContextProps>({
   products: [],
   filteredProducts: [],
   cart: [],
+  cartTotal: 0,
   addToCart: () => {},
   removeFromCart: () => {},
 } as AppContextProps);
@@ -55,7 +61,7 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
 }) => {
   const [selectedValue, setSelectedValue] = useState<string>("");
   const [products, setProducts] = useState<Product[]>([]);
-  const [cart, setCart] = useState<Product[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -68,6 +74,10 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
     fetchProducts();
   }, []);
 
+  const filteredProducts = products.filter((item) => {
+    return selectedValue !== "" ? item.category === selectedValue : item;
+  });
+
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
@@ -79,17 +89,40 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  const filteredProducts = products.filter((item) => {
-    return selectedValue !== "" ? item.category === selectedValue : item;
-  });
-
   function addToCart(product: Product) {
-    setCart((prev) => [...prev, product]);
+    setCart((prev) => {
+      const existingProduct = prev.find((item) => item.id === product.id);
+      if (existingProduct) {
+        return prev.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...prev, { ...product, quantity: 1 }];
+      }
+    });
   }
 
   function removeFromCart(product: Product) {
-    setCart((prev) => prev.filter((item) => item.id !== product.id));
+    setCart((prev) => {
+      const existingProduct = prev.find((item) => item.id === product.id);
+      if (existingProduct && existingProduct.quantity > 1) {
+        return prev.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        );
+      } else {
+        return prev.filter((item) => item.id !== product.id);
+      }
+    });
   }
+
+  const cartTotal = cart.reduce((acc, item) => {
+    const price = item.promotional_price ?? item.price;
+    return acc + price;
+  }, 0);
 
   return (
     <AppContext.Provider
@@ -99,6 +132,7 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
         products,
         filteredProducts,
         cart,
+        cartTotal,
         addToCart,
         removeFromCart,
       }}
