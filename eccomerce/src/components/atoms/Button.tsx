@@ -1,11 +1,13 @@
-type MainButtonProps = {
+import Link from "next/link";
+
+interface MainButtonProps {
   children: React.ReactNode;
   ariaLabel: string;
   onClick?: () => void;
   size?: "small" | "large";
   variant?: "black" | "white";
   href?: string;
-};
+}
 
 const MainButton: React.FC<MainButtonProps> = ({
   children,
@@ -25,9 +27,9 @@ const MainButton: React.FC<MainButtonProps> = ({
 
   if (href) {
     return (
-      <a href={href} className={styles} aria-label={ariaLabel}>
+      <Link href={href} className={styles} aria-label={ariaLabel}>
         <div onClick={onClick}>{children}</div>
-      </a>
+      </Link>
     );
   }
 

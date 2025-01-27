@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const ProfileIcon = () => {
   return (
-    <a href="/profile">
+    <Link href="/profile">
       <Image
         aria-label="Vá para seu perfil"
         src="/ProfileIcon.svg"
@@ -11,7 +12,7 @@ const ProfileIcon = () => {
         height={35}
         className="mx-2"
       />
-    </a>
+    </Link>
   );
 };
 

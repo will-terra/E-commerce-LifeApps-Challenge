@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-type CartIconProps = {
+interface CartIconProps {
   ariaLabel: string;
-};
+}
 
 const CartIcon = ({ ariaLabel }: CartIconProps) => {
   return (
