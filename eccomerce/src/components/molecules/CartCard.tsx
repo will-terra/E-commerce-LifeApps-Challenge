@@ -7,7 +7,7 @@ interface CartCardProps {
 }
 
 const CartCard = ({ product }: CartCardProps) => {
-  const { addToCart, removeFromCart } = useAppContext();
+  const { addToCart, removeFromCart, removeAllFromCart } = useAppContext();
   const { name, category, price, promotional_price, image, quantity } = product;
 
   return (
@@ -46,7 +46,7 @@ const CartCard = ({ product }: CartCardProps) => {
 
         <MainButton
           ariaLabel="Remover produto do carrinho"
-          onClick={() => removeFromCart(product)}
+          onClick={() => removeAllFromCart(product)}
           variant="white"
           size="small"
         >

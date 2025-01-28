@@ -32,6 +32,7 @@ interface AppContextProps {
   cartQuantity: number;
   addToCart: (product: Product) => void;
   removeFromCart: (product: Product) => void;
+  removeAllFromCart: (product: Product) => void;
 }
 
 const AppContext = createContext<AppContextProps>({
@@ -44,6 +45,7 @@ const AppContext = createContext<AppContextProps>({
   cartQuantity: 0,
   addToCart: () => {},
   removeFromCart: () => {},
+  removeAllFromCart: () => {},
 } as AppContextProps);
 
 export const useAppContext = (): AppContextProps => {
@@ -121,6 +123,11 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
     });
   }
 
+  const removeAllFromCart = (product: Product) => {
+    setCart((prev) => {
+      return prev.filter((item) => item.id !== product.id);
+    });
+  };
   const cartTotal = cart.reduce((acc, item) => {
     const price = item.promotional_price ?? item.price;
     return acc + price * (item.quantity || 1);
@@ -142,6 +149,7 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
         cartQuantity,
         addToCart,
         removeFromCart,
+        removeAllFromCart,
       }}
     >
       {children}
