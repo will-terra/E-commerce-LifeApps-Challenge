@@ -11,7 +11,7 @@ const FilterDesktop = () => {
       name="filter"
       value={selectedValue}
       onValueChange={(value) => setSelectedValue(value as string)}
-      className="gap-2"
+      className="flex gap-2"
     >
       <Radio.Root value="">
         <MainButton

@@ -6,7 +6,7 @@ interface LogoProps {
 }
 
 const Logo = ({ variant = "black" }: LogoProps) => {
-  const styles = `text-[2.5rem] font-black ml-12 ${
+  const styles = `text-[2.5rem] font-black ml-4 lg:ml-12 ${
     variant === "black" ? "text-black" : "text-white"
   }`;
 
