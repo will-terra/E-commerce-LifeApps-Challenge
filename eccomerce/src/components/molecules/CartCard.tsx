@@ -23,10 +23,10 @@ const CartCard = ({ product }: CartCardProps) => {
       </div>
       <div className="flex flex-col w-1/2 m-2 gap-2">
         <h2 className="font-semibold text-xl">{name}</h2>
-        <p className="bg-gray-300 w-fit text-black py-1 px-3 border border-gray-500 rounded-full">
+        <p className="bg-white self-center w-fit text-black py-1 px-3 border border-gray-500 rounded-full">
           {category}
         </p>
-        <p className="text-lg">
+        <p className="text-2xl text-black">
           {promotional_price ? promotional_price : price}R$
         </p>
         <div className="flex justify-center items-center w-16 gap-2 bg-gray-300 border border-gray-500 rounded-lg px-2">
@@ -37,7 +37,7 @@ const CartCard = ({ product }: CartCardProps) => {
           >
             -{" "}
           </button>{" "}
-          <p> {quantity} </p>
+          <p> {quantity || 0} </p>
           <button onClick={() => addToCart(product)} className="text-2xl">
             {" "}
             +
@@ -47,11 +47,12 @@ const CartCard = ({ product }: CartCardProps) => {
         <MainButton
           ariaLabel="Remover produto do carrinho"
           onClick={() => removeFromCart(product)}
+          variant="white"
+          size="small"
         >
-          {" "}
-          Remover
+          <Image src="/Trash.svg" alt="Lixeira" width={20} height={20} />
         </MainButton>
-      </div>{" "}
+      </div>
     </div>
   );
 };

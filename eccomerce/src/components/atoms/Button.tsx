@@ -7,6 +7,7 @@ interface MainButtonProps {
   size?: "small" | "large";
   variant?: "black" | "white";
   href?: string;
+  styles?: string;
 }
 
 const MainButton: React.FC<MainButtonProps> = ({
@@ -16,10 +17,11 @@ const MainButton: React.FC<MainButtonProps> = ({
   size = "small",
   variant = "black",
   href,
+  styles,
 }) => {
-  const styles = `flex justify-center items-center cursor-pointer ${
+  const options = `flex justify-center items-center cursor-pointer ${styles} ${
     size === "small"
-      ? "text-sm py-1 px-4 min-w-[2rem] max-w-[7rem] "
+      ? "text-sm py-1 px-4 w-fit max-w-[7rem] "
       : "text-lg py-2  min-w-[8rem]"
   } ${
     variant === "black" ? "bg-black text-white" : "bg-white text-black"
@@ -27,14 +29,14 @@ const MainButton: React.FC<MainButtonProps> = ({
 
   if (href) {
     return (
-      <Link href={href} className={styles} aria-label={ariaLabel}>
+      <Link href={href} className={options} aria-label={ariaLabel}>
         <div onClick={onClick}>{children}</div>
       </Link>
     );
   }
 
   return (
-    <div className={styles} onClick={onClick} aria-label={ariaLabel}>
+    <div className={options} onClick={onClick} aria-label={ariaLabel}>
       {children}
     </div>
   );

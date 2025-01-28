@@ -6,7 +6,7 @@ const ProfileIcon = () => {
     <Link href="/profile">
       <Image
         aria-label="Vá para seu perfil"
-        src="/ProfileIcon.svg"
+        src="/Profile.svg"
         alt="Ícone de perfil"
         width={35}
         height={35}
