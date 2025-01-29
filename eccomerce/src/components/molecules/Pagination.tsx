@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
-import { usePathname, useSearchParams } from "next/navigation";
+"use client";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 import { PaginationProps } from "@/types/Pagination";
 

@@ -6,9 +6,10 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-import { Product } from "@/types/Product";
+
 import { AppContextProps } from "@/types/AppContext";
-import { CartItem } from "@/types/Cart";
+import { useFetchProducts } from "@/hooks/useFetchProducts";
+import { useCart } from "@/hooks/useCart";
 
 const AppContext = createContext<AppContextProps>({
   selectedValue: "",
@@ -39,78 +40,23 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   children,
 }) => {
   const [selectedValue, setSelectedValue] = useState<string>("");
-  const [products, setProducts] = useState<Product[]>([]);
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const { products, fetchProducts } = useFetchProducts();
+  const {
+    cart,
+    addToCart,
+    removeFromCart,
+    removeAllFromCart,
+    cartTotal,
+    cartQuantity,
+  } = useCart();
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch(
-        "https://api-prova-frontend.solucoeslifeapps.com.br/products"
-      );
-      const result = await response.json();
-      setProducts(Array.isArray(result) ? result : [result]);
-    };
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
 
   const filteredProducts = products.filter((item) => {
     return selectedValue !== "" ? item.category === selectedValue : item;
   });
-
-  useEffect(() => {
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
-
-  function addToCart(product: Product) {
-    setCart((prev) => {
-      const existingProduct = prev.find((item) => item.id === product.id);
-      if (existingProduct) {
-        return prev.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      } else {
-        return [...prev, { ...product, quantity: 1 }];
-      }
-    });
-  }
-
-  function removeFromCart(product: Product) {
-    setCart((prev) => {
-      const existingProduct = prev.find((item) => item.id === product.id);
-      if (existingProduct && existingProduct.quantity > 1) {
-        return prev.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        );
-      } else {
-        return prev.filter((item) => item.id !== product.id);
-      }
-    });
-  }
-
-  const removeAllFromCart = (product: Product) => {
-    setCart((prev) => {
-      return prev.filter((item) => item.id !== product.id);
-    });
-  };
-  const cartTotal = cart.reduce((acc, item) => {
-    const price = item.promotional_price ?? item.price;
-    return acc + price * (item.quantity || 1);
-  }, 0);
-
-  const cartQuantity = cart.reduce((acc, item) => {
-    return acc + (item.quantity || 1);
-  }, 0);
 
   return (
     <AppContext.Provider
