@@ -7,7 +7,7 @@ import { useAppContext } from "@/contexts/AppProvider";
 
 import { Product } from "@/types/Product";
 
-const ProductCard: React.FC<Product> = (product: Product) => {
+const ProductCard: React.FC<Product> = (product) => {
   const { id, name, price, promotional_price, image, description } = product;
   const { addToCart } = useAppContext();
 

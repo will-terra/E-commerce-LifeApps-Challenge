@@ -3,9 +3,7 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 
 import { PaginationProps } from "@/types/Pagination";
 
-const Pagination: React.FC<PaginationProps> = (
-  Paginationprops: PaginationProps
-) => {
+const Pagination: React.FC<PaginationProps> = (Paginationprops) => {
   const { currentPage, totalPages, itemsPerPage } = Paginationprops;
   const pathname = usePathname();
   const searchParams = useSearchParams();

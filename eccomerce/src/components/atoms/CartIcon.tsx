@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { CartIconProps } from "@/types/Cart";
 
-const CartIcon: React.FC<CartIconProps> = ({ ariaLabel }: CartIconProps) => {
+const CartIcon: React.FC<CartIconProps> = ({ ariaLabel }) => {
   return (
     <div>
       <Image
