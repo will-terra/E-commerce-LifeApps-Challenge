@@ -33,7 +33,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
           <button
             onClick={() => removeFromCart(product)}
             disabled={quantity < 2}
-            className="text-2xl"
+            className="text-2xl disabled:cursor-not-allowed"
           >
             -{" "}
           </button>{" "}
