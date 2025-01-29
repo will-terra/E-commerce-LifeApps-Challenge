@@ -1,3 +1,6 @@
+import { CartItem } from "./Cart";
+import { Product } from "./Product";
+
 export interface AppContextProps {
   selectedValue: string;
   setSelectedValue: (value: string) => void;

@@ -22,12 +22,12 @@ export default function RootLayout({
           <div className="flex flex-col justify-between h-full bg-gray-100 ">
             <div>
               <Header />
-              <NavBar />
+              <div className="sticky top-0 z-50">
+                <NavBar />
+              </div>
               <div className="Root">{children}</div>{" "}
             </div>
-            <footer className="sticky bottom-0">
-              <Footer />
-            </footer>
+            <Footer />
           </div>
         </body>
       </AppContextProvider>
