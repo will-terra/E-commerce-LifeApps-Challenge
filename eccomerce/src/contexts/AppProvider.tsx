@@ -11,18 +11,7 @@ import { AppContextProps } from "@/types/AppContext";
 import { useFetchProducts } from "@/hooks/useFetchProducts";
 import { useCart } from "@/hooks/useCart";
 
-const AppContext = createContext<AppContextProps>({
-  selectedValue: "",
-  setSelectedValue: () => {},
-  products: [],
-  filteredProducts: [],
-  cart: [],
-  cartTotal: 0,
-  cartQuantity: 0,
-  addToCart: () => {},
-  removeFromCart: () => {},
-  removeAllFromCart: () => {},
-} as AppContextProps);
+const AppContext = createContext<AppContextProps | undefined>(undefined);
 
 export const useAppContext = (): AppContextProps => {
   const context = useContext(AppContext);
@@ -40,7 +29,16 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   children,
 }) => {
   const [selectedValue, setSelectedValue] = useState<string>("");
-  const { products, fetchProducts } = useFetchProducts();
+  const {
+    products,
+    fetchProducts,
+    totalPages,
+    prevPage,
+    nextPage,
+    lastPage,
+    itemsPerPage,
+  } = useFetchProducts();
+
   const {
     cart,
     addToCart,
@@ -51,8 +49,8 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   } = useCart();
 
   useEffect(() => {
-    fetchProducts();
-  }, [fetchProducts]);
+    fetchProducts(1, 6);
+  }, []);
 
   const filteredProducts = products.filter((item) => {
     return selectedValue !== "" ? item.category === selectedValue : item;
@@ -64,6 +62,12 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
         selectedValue,
         setSelectedValue,
         products,
+        fetchProducts,
+        totalPages,
+        prevPage,
+        nextPage,
+        lastPage,
+        itemsPerPage,
         filteredProducts,
         cart,
         cartTotal,

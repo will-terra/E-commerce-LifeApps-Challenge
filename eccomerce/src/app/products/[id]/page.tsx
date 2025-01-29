@@ -1,8 +1,11 @@
 "use client";
+import { useEffect, useState, use } from "react";
 
 import ProductDetails from "@/components/organisms/ProductDetails";
-import { Product, useAppContext } from "@/contexts/AppProvider";
-import { useEffect, useState, use } from "react";
+
+import { useAppContext } from "@/contexts/AppProvider";
+
+import { Product } from "@/types/Product";
 
 interface ProductDetailsProps {
   params: Promise<{ id: number }>;

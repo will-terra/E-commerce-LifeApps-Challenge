@@ -1,39 +1,39 @@
 "use client";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useAppContext } from "@/contexts/AppProvider";
 
-import { PaginationProps } from "@/types/Pagination";
+interface PaginationProps {
+  currentPage: number;
+}
+const Pagination: React.FC<PaginationProps> = ({ currentPage }) => {
+  const { prevPage, nextPage, totalPages, itemsPerPage, fetchProducts } =
+    useAppContext();
 
-const Pagination: React.FC<PaginationProps> = (Paginationprops) => {
-  const { currentPage, totalPages, itemsPerPage } = Paginationprops;
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const { replace } = useRouter();
-
-  const handlePageChange = (page: number) => {
-    const params = new URLSearchParams(searchParams);
-    params.set("page", page.toString());
-    params.set("perPage", itemsPerPage.toString());
-    replace(`${pathname}?${params.toString}`);
+  const handlePageChange = (newPage: number) => {
+    fetchProducts(newPage, itemsPerPage);
   };
 
   return (
-    <div className="flex gap-2 items-center mt-4">
+    <div className="flex gap-4 items-center mt-6">
       <button
-        onClick={() => handlePageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+        onClick={() => handlePageChange(prevPage!)}
+        disabled={!prevPage}
+        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Anterior
       </button>
 
-      <span>
-        Página {currentPage} de {totalPages}
-      </span>
+      <div className="flex items-center gap-2">
+        <span>
+          Página {currentPage} de {totalPages}
+        </span>
+        <span className="text-gray-500">|</span>
+        <span>{itemsPerPage} itens por página</span>
+      </div>
 
       <button
-        onClick={() => handlePageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        className="px-4 py-2 bg-gray-200 rounded disabled:opacity-50"
+        onClick={() => handlePageChange(nextPage!)}
+        disabled={!nextPage}
+        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Próxima
       </button>

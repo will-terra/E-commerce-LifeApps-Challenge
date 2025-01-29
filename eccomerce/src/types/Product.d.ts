@@ -12,3 +12,13 @@ export interface Product {
 export interface ProductDetailsProps {
   product: Product;
 }
+
+interface ApiResponse {
+  first: number;
+  prev: number | null;
+  next: number | null;
+  last: number;
+  pages: number;
+  items: number;
+  data: Product[];
+}
