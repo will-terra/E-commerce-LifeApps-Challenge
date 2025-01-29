@@ -6,34 +6,9 @@ import {
   useEffect,
   ReactNode,
 } from "react";
-
-export interface Product {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  discount_percentage: number;
-  promotional_price: number;
-  image: string;
-  description: string;
-}
-
-export interface CartItem extends Product {
-  quantity: number;
-}
-
-interface AppContextProps {
-  selectedValue: string;
-  setSelectedValue: (value: string) => void;
-  products: Product[];
-  filteredProducts: Product[];
-  cart: CartItem[];
-  cartTotal: number;
-  cartQuantity: number;
-  addToCart: (product: Product) => void;
-  removeFromCart: (product: Product) => void;
-  removeAllFromCart: (product: Product) => void;
-}
+import { Product } from "@/types/Product";
+import { AppContextProps } from "@/types/AppContext";
+import { CartItem } from "@/types/Cart";
 
 const AppContext = createContext<AppContextProps>({
   selectedValue: "",

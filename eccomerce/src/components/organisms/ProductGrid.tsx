@@ -1,5 +1,7 @@
-import { useAppContext } from "@/contexts/AppProvider";
 import ProductCard from "../molecules/ProductCard";
+import Pagination from "../molecules/Pagination";
+
+import { useAppContext } from "@/contexts/AppProvider";
 
 const ProductGrid = () => {
   const { filteredProducts } = useAppContext();
@@ -8,6 +10,7 @@ const ProductGrid = () => {
       {filteredProducts.map((item) => (
         <ProductCard key={item.id} {...item} />
       ))}
+      <Pagination />
     </section>
   );
 };

@@ -1,8 +1,8 @@
+import CartActions from "../molecules/CartActions";
 import Logo from "../atoms/Logo";
 import ProfileIcon from "../atoms/ProfileIcon";
-import CartActions from "../molecules/CartActions";
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
   return (
     <section className="flex justify-between items-center w-full py-1 bg-gray-200 border border-gray-500">
       <Logo variant="black" />

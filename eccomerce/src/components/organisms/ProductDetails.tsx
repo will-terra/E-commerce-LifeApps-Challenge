@@ -1,11 +1,11 @@
-import { Product, useAppContext } from "@/contexts/AppProvider";
 import Image from "next/image";
+
 import MainButton from "../atoms/Button";
 import CartIcon from "../atoms/CartIcon";
 
-interface ProductDetailsProps {
-  product: Product;
-}
+import { useAppContext } from "@/contexts/AppProvider";
+
+import { ProductDetailsProps } from "@/types/Product";
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const {

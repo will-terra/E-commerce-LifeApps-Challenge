@@ -1,7 +1,7 @@
 "use client";
 import { Input } from "@base-ui-components/react";
 
-const SearchInput = () => {
+const SearchInput: React.FC = () => {
   return (
     <Input
       placeholder="Busque por nossos produtos"

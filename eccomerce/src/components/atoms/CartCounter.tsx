@@ -1,8 +1,7 @@
 "use client";
-
 import { useAppContext } from "@/contexts/AppProvider";
 
-const CartCounter = () => {
+const CartCounter: React.FC = () => {
   const { cartQuantity } = useAppContext();
 
   return (

@@ -1,12 +1,12 @@
-import { CartItem, useAppContext } from "@/contexts/AppProvider";
 import Image from "next/image";
+
 import MainButton from "../atoms/Button";
 
-interface CartCardProps {
-  product: CartItem;
-}
+import { useAppContext } from "@/contexts/AppProvider";
 
-const CartCard = ({ product }: CartCardProps) => {
+import { CartCardProps } from "@/types/Cart";
+
+const CartCard: React.FC<CartCardProps> = ({ product }: CartCardProps) => {
   const { addToCart, removeFromCart, removeAllFromCart } = useAppContext();
   const { name, category, price, promotional_price, image, quantity } = product;
 

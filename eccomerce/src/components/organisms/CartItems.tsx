@@ -1,8 +1,9 @@
 "use client";
-import { useAppContext } from "@/contexts/AppProvider";
 import CartCard from "../molecules/CartCard";
 
-const CartItems = () => {
+import { useAppContext } from "@/contexts/AppProvider";
+
+const CartItems: React.FC = () => {
   const { cart } = useAppContext();
 
   return (

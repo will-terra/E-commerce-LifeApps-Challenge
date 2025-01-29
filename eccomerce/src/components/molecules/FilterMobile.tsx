@@ -1,9 +1,10 @@
 import { Menu } from "@base-ui-components/react";
-import React from "react";
+
 import MainButton from "../atoms/Button";
+
 import { useAppContext } from "@/contexts/AppProvider";
 
-const FilterMobile = () => {
+const FilterMobile: React.FC = () => {
   const { selectedValue, setSelectedValue } = useAppContext();
 
   return (

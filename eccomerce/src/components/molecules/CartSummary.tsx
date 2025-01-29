@@ -1,8 +1,9 @@
 "use client";
-import { useAppContext } from "@/contexts/AppProvider";
 import MainButton from "../atoms/Button";
 
-const CartSummary = () => {
+import { useAppContext } from "@/contexts/AppProvider";
+
+const CartSummary: React.FC = () => {
   const { cartTotal } = useAppContext();
   const freeShipping = cartTotal > 199;
 

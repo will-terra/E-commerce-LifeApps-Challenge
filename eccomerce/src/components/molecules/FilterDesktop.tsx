@@ -1,8 +1,10 @@
 import { Radio, RadioGroup } from "@base-ui-components/react";
+
 import MainButton from "../atoms/Button";
+
 import { useAppContext } from "@/contexts/AppProvider";
 
-const FilterDesktop = () => {
+const FilterDesktop: React.FC = () => {
   const { selectedValue, setSelectedValue } = useAppContext();
 
   return (

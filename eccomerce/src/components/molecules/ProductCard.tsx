@@ -1,11 +1,16 @@
 import Image from "next/image";
+
 import MainButton from "../atoms/Button";
 import CartIcon from "../atoms/CartIcon";
-import { Product, useAppContext } from "@/contexts/AppProvider";
 
-const ProductCard = (props: Product) => {
-  const { id, name, price, promotional_price, image, description } = props;
+import { useAppContext } from "@/contexts/AppProvider";
+
+import { Product } from "@/types/Product";
+
+const ProductCard: React.FC<Product> = (product: Product) => {
+  const { id, name, price, promotional_price, image, description } = product;
   const { addToCart } = useAppContext();
+
   return (
     <div className="flex flex-col justify-between gap-2 max-w-80 h-[32rem] p-3 border border-gray-300 rounded-md  bg-gray-200">
       <div className="flex h-[70%] overflow-hidden ">
@@ -36,7 +41,7 @@ const ProductCard = (props: Product) => {
           </MainButton>
 
           <MainButton
-            onClick={() => addToCart({ ...props })}
+            onClick={() => addToCart({ ...product })}
             ariaLabel={`Acessar mais detalhes de: ${name}`}
             variant="white"
           >

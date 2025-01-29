@@ -1,14 +1,6 @@
 import Link from "next/link";
 
-interface MainButtonProps {
-  children: React.ReactNode;
-  ariaLabel: string;
-  onClick?: () => void;
-  size?: "small" | "large";
-  variant?: "black" | "white";
-  href?: string;
-  styles?: string;
-}
+import { MainButtonProps } from "@/types/MainButton";
 
 const MainButton: React.FC<MainButtonProps> = ({
   children,
