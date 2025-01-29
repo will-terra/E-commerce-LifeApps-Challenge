@@ -5,11 +5,17 @@ interface PaginationProps {
   currentPage: number;
 }
 const Pagination: React.FC<PaginationProps> = ({ currentPage }) => {
-  const { prevPage, nextPage, totalPages, itemsPerPage, fetchProducts } =
-    useAppContext();
+  const {
+    prevPage,
+    nextPage,
+    totalPages,
+    itemsPerPage,
+    fetchProducts,
+    selectedValue,
+  } = useAppContext();
 
   const handlePageChange = (newPage: number) => {
-    fetchProducts(newPage, itemsPerPage);
+    fetchProducts(newPage, itemsPerPage, selectedValue);
   };
 
   return (

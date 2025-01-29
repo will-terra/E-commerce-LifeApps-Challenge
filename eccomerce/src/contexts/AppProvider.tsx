@@ -49,12 +49,12 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   } = useCart();
 
   useEffect(() => {
-    fetchProducts(1, 6);
+    fetchProducts(1, 6, "");
   }, []);
 
-  const filteredProducts = products.filter((item) => {
-    return selectedValue !== "" ? item.category === selectedValue : item;
-  });
+  useEffect(() => {
+    fetchProducts(1, 6, selectedValue);
+  }, [selectedValue]);
 
   return (
     <AppContext.Provider
@@ -68,7 +68,6 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
         nextPage,
         lastPage,
         itemsPerPage,
-        filteredProducts,
         cart,
         cartTotal,
         cartQuantity,

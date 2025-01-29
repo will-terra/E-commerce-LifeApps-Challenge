@@ -5,13 +5,16 @@ export interface AppContextProps {
   selectedValue: string;
   setSelectedValue: (value: string) => void;
   products: Product[];
-  fetchProducts: (newPage: number, itemsPerPage: number) => Promise<void>;
+  fetchProducts: (
+    newPage: number,
+    itemsPerPage: number,
+    selectedValue: string
+  ) => Promise<void>;
   totalPages: number;
   prevPage: number;
   nextPage: number;
   lastPage: number;
   itemsPerPage: number;
-  filteredProducts: Product[];
   cart: CartItem[];
   cartTotal: number;
   cartQuantity: number;
