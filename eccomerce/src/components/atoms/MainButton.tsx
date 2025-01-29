@@ -7,7 +7,7 @@ interface MainButtonProps {
   size?: "small" | "large";
   variant?: "black" | "white";
   href?: string;
-  styles?: string;
+  className?: string;
 }
 
 const MainButton: React.FC<MainButtonProps> = ({
@@ -17,33 +17,25 @@ const MainButton: React.FC<MainButtonProps> = ({
   size = "small",
   variant = "black",
   href,
-  styles,
+  className,
 }) => {
-  const options = `flex justify-center items-center cursor-pointer hover:bg-gray-600 ${styles} ${
+  const options = `flex justify-center items-center cursor-pointer hover:bg-gray-600 ${className} ${
     size === "small"
       ? "text-sm py-1 px-4 w-fit max-w-[7rem] "
-      : "text-lg py-2  min-w-[8rem]"
+      : "text-lg py-2  min-w-[8rem] w-fit"
   } ${
     variant === "black" ? "bg-black text-white" : "bg-white text-black"
   } rounded-md border border-black`;
 
-  const handleKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === "Enter" || event.key === " ") {
-      onClick?.();
-    }
-  };
-
   if (href) {
     return (
       <Link
-        tabIndex={0}
         href={href}
         className={options}
         aria-label={ariaLabel}
         onClick={onClick}
-        onKeyDown={handleKeyDown}
       >
-        <button>{children}</button>
+        {children}
       </Link>
     );
   }
@@ -53,7 +45,6 @@ const MainButton: React.FC<MainButtonProps> = ({
       tabIndex={0}
       className={options}
       onClick={onClick}
-      onKeyDown={handleKeyDown}
       aria-label={ariaLabel}
     >
       {children}

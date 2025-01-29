@@ -1,6 +1,6 @@
 import { Radio, RadioGroup } from "@base-ui-components/react";
 
-import MainButton from "../atoms/MainButton";
+import AssistButton from "../atoms/AssistButton";
 
 import { useAppContext } from "@/contexts/AppProvider";
 
@@ -16,40 +16,40 @@ const FilterDesktop: React.FC = () => {
       className="flex gap-2"
     >
       <Radio.Root value="">
-        <MainButton
+        <AssistButton
           ariaLabel="Navegar por todos os produtos"
           variant={selectedValue === "" ? "white" : "black"}
           size="large"
         >
           Ver todos
-        </MainButton>
+        </AssistButton>
       </Radio.Root>
       <Radio.Root value="Camisetas">
-        <MainButton
+        <AssistButton
           ariaLabel="Filtrar para apenas camisetas"
           variant={selectedValue === "Camisetas" ? "white" : "black"}
           size="large"
         >
           Camisetas
-        </MainButton>
+        </AssistButton>
       </Radio.Root>
       <Radio.Root value="Calças">
-        <MainButton
+        <AssistButton
           ariaLabel="Filtrar para apenas calças"
           variant={selectedValue === "Calças" ? "white" : "black"}
           size="large"
         >
           Calças
-        </MainButton>
+        </AssistButton>
       </Radio.Root>
       <Radio.Root value="Tênis">
-        <MainButton
+        <AssistButton
           ariaLabel="Filtrar para apenas tênis"
           variant={selectedValue === "Tênis" ? "white" : "black"}
           size="large"
         >
           Tênis
-        </MainButton>
+        </AssistButton>
       </Radio.Root>
     </RadioGroup>
   );

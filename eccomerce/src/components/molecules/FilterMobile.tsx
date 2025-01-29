@@ -1,6 +1,6 @@
 import { Menu } from "@base-ui-components/react";
 
-import MainButton from "../atoms/MainButton";
+import AssistButton from "../atoms/AssistButton";
 
 import { useAppContext } from "@/contexts/AppProvider";
 
@@ -10,13 +10,13 @@ const FilterMobile: React.FC = () => {
   return (
     <Menu.Root>
       <Menu.Trigger>
-        <MainButton
+        <AssistButton
           ariaLabel="Aplique filtros aos produtos"
           size="large"
           variant="black"
         >
           Filtros
-        </MainButton>
+        </AssistButton>
       </Menu.Trigger>
       <Menu.Portal>
         <Menu.Positioner
@@ -30,40 +30,40 @@ const FilterMobile: React.FC = () => {
               onValueChange={(value) => setSelectedValue(value as string)}
             >
               <Menu.RadioItem value="" closeOnClick>
-                <MainButton
+                <AssistButton
                   ariaLabel="Navegar por todos os produtos"
                   variant={selectedValue === "" ? "white" : "black"}
                   size="large"
                 >
                   Ver todos
-                </MainButton>
+                </AssistButton>
               </Menu.RadioItem>
               <Menu.RadioItem value="Camisetas" closeOnClick>
-                <MainButton
+                <AssistButton
                   ariaLabel="Filtrar para apenas camisetas"
                   variant={selectedValue === "Camisetas" ? "white" : "black"}
                   size="large"
                 >
                   Camisetas
-                </MainButton>
+                </AssistButton>
               </Menu.RadioItem>
               <Menu.RadioItem value="Calças" closeOnClick>
-                <MainButton
+                <AssistButton
                   ariaLabel="Filtrar para apenas calças"
                   variant={selectedValue === "Calças" ? "white" : "black"}
                   size="large"
                 >
                   Calças
-                </MainButton>
+                </AssistButton>
               </Menu.RadioItem>
               <Menu.RadioItem value="Tênis" closeOnClick>
-                <MainButton
+                <AssistButton
                   ariaLabel="Filtrar para apenas tênis"
                   variant={selectedValue === "Tênis" ? "white" : "black"}
                   size="large"
                 >
                   Tênis
-                </MainButton>
+                </AssistButton>
               </Menu.RadioItem>
             </Menu.RadioGroup>{" "}
           </Menu.Popup>

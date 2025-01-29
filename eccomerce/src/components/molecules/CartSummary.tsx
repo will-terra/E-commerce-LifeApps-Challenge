@@ -30,7 +30,7 @@ const CartSummary: React.FC = () => {
           {freeShipping ? cartTotal : cartTotal + 50}R${" "}
         </span>
       </p>
-      <MainButton ariaLabel="Finalizar pedido" size="large">
+      <MainButton className="px-8" ariaLabel="Finalizar pedido" size="large">
         Finalizar pedido
       </MainButton>
     </div>
