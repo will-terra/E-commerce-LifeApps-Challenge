@@ -1,6 +1,6 @@
 import { Menu } from "@base-ui-components/react";
 
-import MainButton from "../atoms/Button";
+import MainButton from "../atoms/MainButton";
 
 import { useAppContext } from "@/contexts/AppProvider";
 

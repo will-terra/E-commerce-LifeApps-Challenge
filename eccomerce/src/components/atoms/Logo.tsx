@@ -8,7 +8,7 @@ const Logo: React.FC<LogoProps> = ({ variant = "black" }) => {
   }`;
 
   return (
-    <Link href="/">
+    <Link href="/" aria-label="Ir para a página inicial">
       <h1 className={styles}>NEISH</h1>{" "}
     </Link>
   );

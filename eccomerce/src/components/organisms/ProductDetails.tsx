@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import MainButton from "../atoms/Button";
+import MainButton from "../atoms/MainButton";
 import CartIcon from "../atoms/CartIcon";
 
 import { useAppContext } from "@/contexts/AppProvider";

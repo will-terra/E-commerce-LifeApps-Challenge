@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import MainButton from "../atoms/Button";
+import MainButton from "../atoms/MainButton";
 
 import { useAppContext } from "@/contexts/AppProvider";
 

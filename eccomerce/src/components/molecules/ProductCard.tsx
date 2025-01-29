@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import MainButton from "../atoms/Button";
+import MainButton from "../atoms/MainButton";
 import CartIcon from "../atoms/CartIcon";
 
 import { useAppContext } from "@/contexts/AppProvider";
@@ -42,7 +42,7 @@ const ProductCard: React.FC<Product> = (product) => {
 
           <MainButton
             onClick={() => addToCart({ ...product })}
-            ariaLabel={`Acessar mais detalhes de: ${name}`}
+            ariaLabel={`Adicionar: ${name} ao carrinho`}
             variant="white"
           >
             <CartIcon ariaLabel={`Adicionar ${name} ao carrinho`} />
