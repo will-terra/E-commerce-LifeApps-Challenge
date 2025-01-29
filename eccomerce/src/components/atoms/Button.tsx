@@ -11,7 +11,7 @@ const MainButton: React.FC<MainButtonProps> = ({
   href,
   styles,
 }) => {
-  const options = `flex justify-center items-center cursor-pointer ${styles} ${
+  const options = `flex justify-center items-center cursor-pointer hover:bg-gray-600 ${styles} ${
     size === "small"
       ? "text-sm py-1 px-4 w-fit max-w-[7rem] "
       : "text-lg py-2  min-w-[8rem]"

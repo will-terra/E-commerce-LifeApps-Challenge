@@ -1,10 +1,8 @@
 "use client";
 import { useAppContext } from "@/contexts/AppProvider";
+import { useState } from "react";
 
-interface PaginationProps {
-  currentPage: number;
-}
-const Pagination: React.FC<PaginationProps> = ({ currentPage }) => {
+const Pagination: React.FC = () => {
   const {
     prevPage,
     nextPage,
@@ -14,34 +12,35 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage }) => {
     selectedValue,
   } = useAppContext();
 
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
   const handlePageChange = (newPage: number) => {
     fetchProducts(newPage, itemsPerPage, selectedValue);
+    setCurrentPage(newPage);
   };
 
   return (
-    <div className="flex gap-4 items-center mt-6">
+    <div className="flex gap-4 justify-center items-center mt-6">
       <button
         onClick={() => handlePageChange(prevPage!)}
         disabled={!prevPage}
-        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="px-4 py-2 bg-black text-white  font-black text-2xl rounded hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Anterior
+        {"<"}
       </button>
 
       <div className="flex items-center gap-2">
         <span>
-          Página {currentPage} de {totalPages}
+          {currentPage} de {totalPages}
         </span>
-        <span className="text-gray-500">|</span>
-        <span>{itemsPerPage} itens por página</span>
       </div>
 
       <button
         onClick={() => handlePageChange(nextPage!)}
         disabled={!nextPage}
-        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="px-4 py-2 bg-black text-white  font-black text-2xl rounded hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Próxima
+        {">"}
       </button>
     </div>
   );

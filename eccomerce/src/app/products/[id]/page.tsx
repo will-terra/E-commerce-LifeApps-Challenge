@@ -28,7 +28,7 @@ export default function Details({ params }: ProductDetailsProps) {
       {product ? (
         <ProductDetails product={product} />
       ) : (
-        <div>Carregando o produto...</div>
+        <div className="flex justify-center m-6 ">Carregando o produto...</div>
       )}
     </main>
   );
