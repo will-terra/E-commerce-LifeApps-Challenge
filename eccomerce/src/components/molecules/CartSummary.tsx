@@ -3,12 +3,18 @@ import MainButton from "../atoms/MainButton";
 
 import { useAppContext } from "@/contexts/AppProvider";
 
-const CartSummary: React.FC = () => {
-  const { cartTotal } = useAppContext();
+interface CartSummaryProps {
+  className?: string;
+}
+
+const CartSummary: React.FC<CartSummaryProps> = ({ className }) => {
+  const { cartTotal, removeAllFromCart } = useAppContext();
   const freeShipping = cartTotal > 199;
 
   return (
-    <div className="self-start border border-gray-500 max-w-80 px-12 py-8 m-4 bg-gray-200 rounded-md ">
+    <div
+      className={`${className} self-center border border-gray-500 max-w-[40rem] my-4 bg-gray-200 rounded-md `}
+    >
       <h2 className="uppercase font-semibold text-xl mb-4 text-center">
         Resumo do pedido:
       </h2>
@@ -18,7 +24,7 @@ const CartSummary: React.FC = () => {
       <p className="text-lg mb-4">
         Frete:{" "}
         {freeShipping ? (
-          <span className="text-lg text-red-500">grátis!</span>
+          <span className="text-lg text-red-800">grátis!</span>
         ) : (
           "50R$"
         )}
@@ -30,9 +36,20 @@ const CartSummary: React.FC = () => {
           {freeShipping ? cartTotal : cartTotal + 50}R${" "}
         </span>
       </p>
-      <MainButton className="px-8" ariaLabel="Finalizar pedido" size="large">
-        Finalizar pedido
-      </MainButton>
+      <div className="flex justify-around items-center gap-4">
+        <MainButton className="px-8" ariaLabel="Finalizar pedido" size="large">
+          Finalizar pedido
+        </MainButton>
+        <MainButton
+          onClick={() => removeAllFromCart}
+          className="px-8"
+          ariaLabel="Limpar carrinho"
+          variant="white"
+          size="large"
+        >
+          Limpar carrinho
+        </MainButton>
+      </div>
     </div>
   );
 };

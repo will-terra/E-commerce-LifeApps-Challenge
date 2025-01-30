@@ -7,20 +7,20 @@ import { useAppContext } from "@/contexts/AppProvider";
 import { CartCardProps } from "@/types/Cart";
 
 const CartCard: React.FC<CartCardProps> = ({ product }) => {
-  const { addToCart, removeFromCart, removeAllFromCart } = useAppContext();
+  const { addToCart, removeFromCart } = useAppContext();
   const { name, category, price, promotional_price, image, quantity } = product;
 
   return (
-    <div className="flex justify-center gap-5 w-[26rem] max-w-[26rem] py-6 pl-4 bg-gray-200 border border-gray-500 rounded-lg">
+    <div className="flex justify-center self-center gap-5 w-fit max-w-[24rem] lg:w-[26rem] lg:max-w-[26rem] py-3 lg:py-6 pl-4 bg-gray-200 border border-gray-500 rounded-lg">
       <div className="flex w-1/2">
         <Image
-          priority
+          loading="lazy"
           src={image}
           alt={name}
           width={200}
           height={200}
           className="m-2 object-cover"
-        />{" "}
+        />
       </div>
       <div className="flex flex-col w-1/2 m-2 gap-2">
         <h2 className="font-semibold text-xl">{name}</h2>
@@ -32,22 +32,26 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
         </p>
         <div className="flex justify-center items-center w-16 gap-2 bg-gray-300 border border-gray-500 rounded-lg px-2">
           <button
+            arial-label={`Remover um ${name} do carrinho`}
             onClick={() => removeFromCart(product)}
             disabled={quantity < 2}
-            className="text-2xl disabled:cursor-not-allowed"
+            className="text-3xl disabled:cursor-not-allowed"
           >
             -{" "}
-          </button>{" "}
+          </button>
           <p> {quantity || 0} </p>
-          <button onClick={() => addToCart(product)} className="text-2xl">
-            {" "}
+          <button
+            arial-label={`Adicionar um ${name} do carrinho`}
+            onClick={() => addToCart(product)}
+            className="text-2xl"
+          >
             +
           </button>
         </div>
 
         <MainButton
-          ariaLabel="Remover produto do carrinho"
-          onClick={() => removeAllFromCart(product)}
+          ariaLabel={`Remover todos ${name} do carrinho`}
+          onClick={() => removeFromCart(product)}
           variant="white"
           size="small"
         >

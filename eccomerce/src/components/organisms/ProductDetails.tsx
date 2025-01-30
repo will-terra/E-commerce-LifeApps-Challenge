@@ -48,7 +48,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
               -
               <p className="text-lg ">
                 Por:{" "}
-                <span className="text-red-500 text-2xl">
+                <span className="text-red-800 text-2xl">
                   {promotional_price}R$
                 </span>
               </p>
@@ -56,14 +56,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
             <p className="text-sm">
               {" "}
               Incríveis {""}
-              <span className="text-red-500">{discount_percentage}%</span> de
+              <span className="text-red-800">{discount_percentage}%</span> de
               desconto
             </p>
           </div>
         ) : (
           <>
             <p className="text-xl ml-4">
-              Por: <span className="text-red-500"> {price}R$ </span>
+              Por: <span className="text-red-800"> {price}R$ </span>
             </p>
           </>
         )}
