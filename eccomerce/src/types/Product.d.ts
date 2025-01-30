@@ -13,7 +13,7 @@ export interface ProductDetailsProps {
   product: Product;
 }
 
-interface ApiResponse {
+export interface ApiResponse {
   first: number;
   prev: number | null;
   next: number | null;
@@ -21,4 +21,30 @@ interface ApiResponse {
   pages: number;
   items: number;
   data: Product[];
+}
+
+export interface PaginationApiResponse {
+  data: Product[];
+  pages: number;
+  prev: number;
+  next: number;
+  last: number;
+}
+
+export interface useFetchProductsHook {
+  (): {
+    products: Product[];
+    fetchProducts: (
+      newPage: number,
+      itemsPerPage: number,
+      selectedValue: string
+    ) => Promise<PaginationApiResponse>;
+    fetchAllProducts: () => Promise<Product[]>;
+    pagination: {
+      totalPages: number;
+      prevPage: number | null;
+      nextPage: number | null;
+      lastPage: number;
+    };
+  };
 }

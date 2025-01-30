@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 import { Product } from "@/types/Product";
-import { CartItem } from "@/types/Cart";
+import { CartItem, useCartHook } from "@/types/Cart";
 
-export const useCart = () => {
+export const useCart: useCartHook = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
   useEffect(() => {
@@ -47,10 +47,8 @@ export const useCart = () => {
     });
   };
 
-  const removeAllFromCart = (product: Product) => {
-    setCart((prev) => {
-      return prev.filter((item) => item.id !== product.id);
-    });
+  const removeAllFromCart = () => {
+    setCart([]);
   };
 
   const cartTotal = cart.reduce((acc, item) => {
