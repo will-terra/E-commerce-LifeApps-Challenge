@@ -15,10 +15,11 @@ const ProductCard: React.FC<Product> = (product) => {
     <div className="flex flex-col justify-between gap-2 max-w-80 h-[32rem] p-3 border border-gray-300 rounded-md  bg-gray-200">
       <div className="flex h-[70%] overflow-hidden ">
         <Image
+          priority
           src={image}
           alt={description}
-          width={600}
-          height={450}
+          width={300}
+          height={225}
           className={"object-cover place-self-center"}
         />
       </div>

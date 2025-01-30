@@ -14,6 +14,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
     <div className="flex justify-center gap-5 w-[26rem] max-w-[26rem] py-6 pl-4 bg-gray-200 border border-gray-500 rounded-lg">
       <div className="flex w-1/2">
         <Image
+          priority
           src={image}
           alt={name}
           width={200}
