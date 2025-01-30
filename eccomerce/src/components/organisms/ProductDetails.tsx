@@ -21,13 +21,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const { addToCart } = useAppContext();
 
   return (
-    <section className="flex  justify-center m-auto">
+    <section className="flex justify-center m-auto gap-2">
       <Image
+        priority
         src={image}
         alt={name}
         width={600}
         height={450}
-        className="mt-8 "
+        className="mt-8 ml-4 w-auto h-auto "
       />
       <div className="flex flex-col justify-start max-w-[50%] gap-4 p-4 mt-8">
         <h1 className="text-4xl font-black text center">{name}</h1>
@@ -69,12 +70,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
         <MainButton
           onClick={() => addToCart({ ...product })}
-          ariaLabel={`Acessar mais detalhes de: ${name}`}
+          ariaLabel={`Adicionar ${name} ao carrinho`}
           variant="white"
           size="large"
         >
-          <CartIcon ariaLabel={`Adicionar ${name} ao carrinho`} /> Adicionar ao
-          carrinho
+          <CartIcon ariaLabel={`ícone do carrinho`} /> Adicionar ao carrinho
         </MainButton>
       </div>
     </section>
