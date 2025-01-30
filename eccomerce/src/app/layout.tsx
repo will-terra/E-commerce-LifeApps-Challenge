@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className="h-screen">
         <AppContextProvider>
           <div className="flex flex-col justify-between h-full bg-gray-100 ">
-            <div>
+            <div className="bg-gray-100">
               <Header />
               <div className="sticky top-0 z-50">
                 <NavBar />

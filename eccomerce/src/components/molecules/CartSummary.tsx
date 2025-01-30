@@ -13,7 +13,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ className }) => {
 
   return (
     <div
-      className={`${className} border border-gray-500 h-fit max-w-[40rem] my-4 bg-gray-200 rounded-md `}
+      className={`${className} border border-gray-500 h-fit bg-gray-200 rounded-md `}
     >
       <h2 className="uppercase font-semibold text-xl mb-4 text-center">
         Resumo do pedido:
@@ -36,7 +36,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ className }) => {
           {freeShipping ? cartTotal : cartTotal + 50}R${" "}
         </span>
       </p>
-      <div className="flex justify-around items-center gap-4">
+      <div className="flex justify-around flex-col md-flex-row items-center gap-4">
         <MainButton className="px-8" ariaLabel="Finalizar pedido" size="large">
           Finalizar pedido
         </MainButton>

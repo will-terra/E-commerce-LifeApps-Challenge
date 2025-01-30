@@ -11,8 +11,8 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
   const { name, category, price, promotional_price, image, quantity } = product;
 
   return (
-    <div className="flex justify-center self-center gap-5 w-fit max-w-[24rem] lg:w-[26rem] lg:max-w-[26rem] py-3 lg:py-6 pl-4 bg-gray-200 border border-gray-500 rounded-lg">
-      <div className="flex w-1/2">
+    <div className="flex justify-center self-center gap-5 w-full max-w-[30rem]  xl:max-w-[30rem] 2xl:max-w-[40rem] py-3 xl:py-6 pl-4 xl:pl-8 bg-gray-200 border border-gray-500 rounded xl">
+      <div className="flex w-1/2 justify-end">
         <Image
           loading="lazy"
           src={image}
@@ -30,7 +30,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
         <p className="text-2xl text-black">
           {promotional_price ? promotional_price : price}R$
         </p>
-        <div className="flex justify-center items-center w-16 gap-2 bg-gray-300 border border-gray-500 rounded-lg px-2">
+        <div className="flex justify-center items-center w-16 gap-2 bg-gray-300 border border-gray-500 rounded xl px-2">
           <button
             arial-label={`Remover um ${name} do carrinho`}
             onClick={() => removeFromCart(product)}

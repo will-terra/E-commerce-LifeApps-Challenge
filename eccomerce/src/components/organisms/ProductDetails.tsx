@@ -21,7 +21,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const { addToCart } = useAppContext();
 
   return (
-    <section className="flex flex-col lg:flex-row justify-center m-auto bg-gray-100">
+    <section className="flex flex-col lg:flex-row justify-center m-auto gap-4 2xl:gap-16 bg-gray-100">
       <div className="flex max-w-[95%] lg:max-w-1/2  mx-4 justify-center items-center">
         <Image
           priority
@@ -32,7 +32,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           className="w-auto h-auto "
         />
       </div>
-      <div className="flex flex-col justify-start max-w-[95%] lg:max-w-1/2 gap-4 p-4">
+      <div className="flex flex-col self-center justify-start max-w-[40rem] lg:max-w-1/2 gap-4 p-4 mt-8 lg:mt-0">
         <h1 className="text-4xl font-black text center">{name}</h1>
         <p className="bg-gray-300 w-fit text-black py-2 px-4 border border-gray-500 rounded-full">
           {category}{" "}
@@ -41,12 +41,12 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         {promotional_price ? (
           <div className="flex flex-col gap-1 ml-2">
             <div className="flex gap-1 items-center">
-              <p className="text-gray-500 text-lg">
+              <p className="text-gray-500 text-xl">
                 {" "}
-                De: <span className="line-through text-lg"> {price}R$ </span>
+                De: <span className="line-through text-xl"> {price}R$ </span>
               </p>{" "}
               -
-              <p className="text-lg ">
+              <p className="text-xl ">
                 Por:{" "}
                 <span className="text-red-800 text-2xl">
                   {promotional_price}R$
