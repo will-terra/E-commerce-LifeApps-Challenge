@@ -21,8 +21,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const { addToCart } = useAppContext();
 
   return (
-    <section className="flex flex-col lg:flex-row justify-center m-auto">
-      <div className="flex max-w-[95%] lg:max-w-[50%] mt-8 mx-4 justify-center items-center">
+    <section className="flex flex-col lg:flex-row justify-center m-auto bg-gray-100">
+      <div className="flex max-w-[95%] lg:max-w-1/2  mx-4 justify-center items-center">
         <Image
           priority
           src={image}
@@ -32,7 +32,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           className="w-auto h-auto "
         />
       </div>
-      <div className="flex flex-col justify-start max-w-[95%] lg:max-w-[50%] gap-4 p-4 mx-auto mt-8">
+      <div className="flex flex-col justify-start max-w-[95%] lg:max-w-1/2 gap-4 p-4">
         <h1 className="text-4xl font-black text center">{name}</h1>
         <p className="bg-gray-300 w-fit text-black py-2 px-4 border border-gray-500 rounded-full">
           {category}{" "}
