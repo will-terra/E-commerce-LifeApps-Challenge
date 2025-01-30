@@ -8,20 +8,20 @@ import { useAppContext } from "@/contexts/AppProvider";
 import { Product } from "@/types/Product";
 
 interface ProductDetailsProps {
-  params: Promise<{ id: number }>;
+  params: Promise<{ id: string }>;
 }
 
 export default function Details({ params }: ProductDetailsProps) {
   const { id } = use(params);
-  const { products } = useAppContext();
+  const { allProducts } = useAppContext();
   const [product, setProduct] = useState<Product | null>(null);
 
   useEffect(() => {
-    if (products) {
-      const foundProduct = products.find((product) => product.id === id);
+    if (allProducts) {
+      const foundProduct = allProducts.find((product) => product.id === id);
       setProduct(foundProduct || null);
     }
-  }, [products, id]);
+  }, [allProducts, id]);
 
   return (
     <main className="mt-4 bg-gray-100">

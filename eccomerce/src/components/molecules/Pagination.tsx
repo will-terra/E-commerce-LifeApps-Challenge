@@ -3,15 +3,9 @@ import { useAppContext } from "@/contexts/AppProvider";
 import { useState } from "react";
 
 const Pagination: React.FC = () => {
-  const {
-    prevPage,
-    nextPage,
-    totalPages,
-    itemsPerPage,
-    fetchProducts,
-    selectedValue,
-  } = useAppContext();
-
+  const { pagination, itemsPerPage, fetchProducts, selectedValue } =
+    useAppContext();
+  const { prevPage, nextPage, totalPages } = pagination;
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const handlePageChange = (newPage: number) => {

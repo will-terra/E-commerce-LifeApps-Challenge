@@ -4,17 +4,20 @@ import { Product } from "./Product";
 export interface AppContextProps {
   selectedValue: string;
   setSelectedValue: (value: string) => void;
+  allProducts: Product[];
   products: Product[];
   fetchProducts: (
     newPage: number,
     itemsPerPage: number,
     selectedValue: string
   ) => Promise<void>;
-  totalPages: number;
-  prevPage: number;
-  nextPage: number;
-  lastPage: number;
   itemsPerPage: number;
+  pagination: {
+    totalPages: number;
+    prevPage: number;
+    nextPage: number;
+    lastPage: number;
+  };
   cart: CartItem[];
   cartTotal: number;
   cartQuantity: number;

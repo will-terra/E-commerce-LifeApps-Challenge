@@ -10,6 +10,7 @@ import {
 import { AppContextProps } from "@/types/AppContext";
 import { useFetchProducts } from "@/hooks/useFetchProducts";
 import { useCart } from "@/hooks/useCart";
+import { Product } from "@/types/Product";
 
 const AppContext = createContext<AppContextProps | undefined>(undefined);
 
@@ -29,16 +30,11 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   children,
 }) => {
   const [selectedValue, setSelectedValue] = useState<string>("");
-  const {
-    products,
-    fetchProducts,
-    totalPages,
-    prevPage,
-    nextPage,
-    lastPage,
-    itemsPerPage,
-  } = useFetchProducts();
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
+  const { products, fetchProducts, fetchAllProducts, pagination } =
+    useFetchProducts();
 
+  const itemsPerPage = 6;
   const {
     cart,
     addToCart,
@@ -53,6 +49,12 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   }, []);
 
   useEffect(() => {
+    fetchAllProducts().then((data) => {
+      setAllProducts(data);
+    });
+  }, []);
+
+  useEffect(() => {
     fetchProducts(1, 6, selectedValue);
   }, [selectedValue]);
 
@@ -61,12 +63,10 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
       value={{
         selectedValue,
         setSelectedValue,
+        allProducts,
         products,
         fetchProducts,
-        totalPages,
-        prevPage,
-        nextPage,
-        lastPage,
+        pagination,
         itemsPerPage,
         cart,
         cartTotal,
