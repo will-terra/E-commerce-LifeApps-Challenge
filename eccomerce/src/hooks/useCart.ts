@@ -15,6 +15,9 @@ export const useCart: useCartHook = () => {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
+    if (cart.length === 0) {
+      localStorage.removeItem("cart");
+    }
   }, [cart]);
 
   const addToCart = (product: Product) => {
@@ -48,6 +51,7 @@ export const useCart: useCartHook = () => {
   };
 
   const removeAllFromCart = () => {
+    console.log("removing all from cart");
     setCart([]);
   };
 
