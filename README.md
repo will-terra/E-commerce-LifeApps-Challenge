@@ -27,14 +27,18 @@ cd E-commerce-LifeApps-Challenge
 npm install
 npx next dev
 ```
+O projeto poderá ser acessado através do endereço http://localhost:3000
 
 ## ▶️ Para rodar os testes
 
+Com o projeto rodando:
 ```bash
 npx cypress open
 ```
 
-Escolha seu navegador de preferência
-Navegue até os Specs e execute cada um dos três
+Escolha seu navegador de preferência.
+Execute todos Specs um a um.
+
+** Se o projeto não estiver rodando em http://localhost:3000 você dever alterar para a baseUrl correspondente em cypress.config.ts **
 
 # E-commerce-LifeApps-Challenge 🛒
