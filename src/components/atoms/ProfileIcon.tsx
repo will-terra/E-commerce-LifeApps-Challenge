@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const ProfileIcon: React.FC = () => {
   return (
-    <Link href="/profile">
+    <Link href="/">
       <Image
         aria-label="Vá para seu perfil"
         src="/Profile.svg"
