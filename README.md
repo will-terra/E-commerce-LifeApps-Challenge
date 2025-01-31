@@ -1,13 +1,27 @@
-Hi there
+# E-commerce LifeApps Challenge 🛒
 
-React 19
+Projeto desenvolvido como avaliação técnica para a vaga de Front-end na LifeApps. E-commerce completo com foco em performance e acessibilidade, utilizando as melhores práticas do ecossistema React.
 
-next ver 15
+## 🚀 Tecnologias-chave
 
-typescript
+- Next.js 15 (App Router)
+- React 19 com TypeScript
+- Gerenciamento de estado com Context API
+- UI Components: Base UI (acessibilidade nativa)
+- Estilização: Tailwind CSS
 
-TailwindCSS
+## ✨ Funcionalidades
 
-BaseUI
+- 📦 Listagem de produtos com paginação server-side
+- 🔍 Filtragem por categorias
+- 🛍️ Carrinho persistente (add/remove items)
+- 👁️ Visualização detalhada de produtos
+- ♿ Navegação acessível (teclado + leitores de tela)
 
-context api
+## ▶️ Como executar
+
+```bash
+git clone [url-do-repo]
+npm install
+npx next dev
+```
