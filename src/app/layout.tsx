@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className="global-html">
       <AppContextProvider>
-        <body className="h-screen flex flex-col bg-gray-100">
+        <body className="h-[100dvh] flex flex-col bg-gray-100">
           <Header />
           <div className="sticky top-0 z-50">
             <NavBar />
@@ -34,7 +34,6 @@ export default function RootLayout({
           <Footer />
         </body>
       </AppContextProvider>
-      x{" "}
     </html>
   );
 }
