@@ -15,7 +15,7 @@ const CartDialog: React.FC = () => {
     <Dialog.Root>
       <Dialog.Trigger aria-haspopup="dialog">
         <AssistButton
-          className="px-8"
+          className="px-12"
           ariaLabel="Finalizar pedido"
           size="large"
         >

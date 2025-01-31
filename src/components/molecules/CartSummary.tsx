@@ -21,7 +21,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ className }) => {
       <p className="text-lg mb-2">
         Carrinho: <span className="text-lg ">{cartTotal}R$</span>{" "}
       </p>
-      <p className="text-lg mb-4">
+      <p aria-live="polite" className="text-lg mb-4">
         Frete:{" "}
         {freeShipping ? (
           <span className="text-lg text-red-800">grátis!</span>
@@ -30,18 +30,22 @@ const CartSummary: React.FC<CartSummaryProps> = ({ className }) => {
         )}
       </p>
       <hr className="h-1 bg-gray-500 border-0" />
-      <p className="text-lg m-3">
-        Total:{" "}
-        <span className="text-2xl text-bold">
+      <p className="text-xl mr-3 my-3">
+        Total:
+        <span
+          aria-live="polite"
+          aria-label="Valor total do pedido"
+          className="text-2xl text-bold ml-2"
+        >
           {freeShipping ? cartTotal : cartTotal + 50}R${" "}
         </span>
       </p>
-      <div className="flex justify-around flex-col md-flex-row items-center gap-4">
+      <div className="flex justify-around flex-col lg:flex-row items-center gap-4">
         <CartDialog />
         <MainButton
           onClick={removeAllFromCart}
-          className="px-8"
-          ariaLabel="Limpar carrinho"
+          className="px-10"
+          ariaLabel="Limpar todos itens do carrinho"
           variant="white"
           size="large"
         >
