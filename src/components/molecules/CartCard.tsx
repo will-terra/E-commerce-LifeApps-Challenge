@@ -11,7 +11,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
   const { name, category, price, promotional_price, image, quantity } = product;
 
   return (
-    <div className="flex justify-center self-center gap-5 w-full max-w-[30rem]  xl:max-w-[30rem] 2xl:max-w-[40rem] py-3 xl:py-6 pl-4 xl:pl-8 bg-gray-200 border border-gray-500 rounded xl">
+    <div className="flex justify-center self-center gap-5 w-full max-w-[30rem]  xl:max-w-[30rem] 2xl:max-w-[40rem] py-3 xl:py-6 pl-4 xl:pl-8 mx-4 xl:mx-0 bg-gray-200 border border-gray-500 rounded xl">
       <div className="flex w-1/2 justify-end">
         <Image
           loading="lazy"
@@ -32,16 +32,23 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
         </p>
         <div className="flex justify-center items-center w-16 gap-2 bg-gray-300 border border-gray-500 rounded xl px-2">
           <button
-            arial-label={`Remover um ${name} do carrinho`}
+            aria-label={`Remover um ${name} do carrinho`}
             onClick={() => removeFromCart(product)}
             disabled={quantity < 2}
             className="text-3xl disabled:cursor-not-allowed"
           >
             -{" "}
           </button>
-          <p> {quantity || 0} </p>
+          <p
+            aria-live="polite"
+            aria-label={`Quantidade de ${name} no carrinho:`}
+            className="text-2xl"
+          >
+            {" "}
+            {quantity || 0}{" "}
+          </p>
           <button
-            arial-label={`Adicionar um ${name} do carrinho`}
+            aria-label={`Adicionar um ${name} ao carrinho`}
             onClick={() => addToCart(product)}
             className="text-2xl"
           >
@@ -50,7 +57,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
         </div>
 
         <MainButton
-          ariaLabel={`Remover todos ${name} do carrinho`}
+          ariaLabel={`Remover um ${name} do carrinho`}
           onClick={() => removeFromCart(product)}
           variant="white"
           size="small"

@@ -7,7 +7,11 @@ const CartCounter: React.FC = () => {
   return (
     <>
       {cartQuantity > 0 && (
-        <p className="text-black text-[2rem] font-medium mr-3">
+        <p
+          aria-live="assertive"
+          aria-label={`Total de itens no carrinho:`}
+          className="text-black text-[2rem] font-medium mr-3"
+        >
           {cartQuantity}
         </p>
       )}

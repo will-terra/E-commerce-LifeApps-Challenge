@@ -46,16 +46,19 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
 
   useEffect(() => {
     fetchProducts(1, itemsPerPage, "");
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     fetchAllProducts().then((data) => {
       setAllProducts(data);
     });
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     fetchProducts(1, itemsPerPage, selectedValue);
+    // eslint-disable-next-line
   }, [selectedValue]);
 
   return (

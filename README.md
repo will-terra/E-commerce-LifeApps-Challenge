@@ -1,6 +1,6 @@
 # E-commerce LifeApps Challenge 🛒
 
-Projeto desenvolvido como avaliação técnica para a vaga de desenvolvedor Front-end na LifeApps. Consiste em um E-commerce completo, com foco em performance e acessibilidade, utilizando as melhores práticas do ecossistema React.
+Projeto desenvolvido como avaliação técnica para a vaga de desenvolvedor Front-end na LifeApps. Consiste em um E-commerce completo, com foco em acessibilidade, seguindo os princípios WCAG 2.2.
 
 ## Instruções do Projeto
 
@@ -13,8 +13,8 @@ Para acessar os requisitos técnicos e detalhes da prova, consulte:
 - React 19 com TypeScript
 - Gerenciamento de estado com Context API
 - UI Components:
-      Arquitetura Atomic Design (Atoms → Molecules → Organisms)
-      Base UI para acessibilidade nativa∙ 
+  Arquitetura Atomic Design (Atoms → Molecules → Organisms)
+  Base UI para acessibilidade nativa∙
 - Estilização: Design responsivo com Tailwind CSS
 - Confiabilidade: Testes E2E executados com Cypress
 
@@ -36,11 +36,13 @@ cd E-commerce-LifeApps-Challenge
 npm install
 npx next dev
 ```
+
 O projeto poderá ser acessado através do endereço http://localhost:3000
 
 ## ▶️ Para rodar os testes
 
 Com o projeto rodando:
+
 ```bash
 npx cypress open
 ```

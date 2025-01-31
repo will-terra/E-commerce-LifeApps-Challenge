@@ -32,7 +32,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           className="w-auto h-auto "
         />
       </div>
-      <div className="flex flex-col self-center justify-start max-w-[40rem] lg:max-w-1/2 gap-4 p-4 mt-8 lg:mt-0">
+      <div className="flex flex-col self-center lg:self-start justify-start max-w-[40rem] lg:max-w-1/2 gap-4 p-4 mt-8 lg:mt-0">
         <h1 className="text-4xl font-black text center">{name}</h1>
         <p className="bg-gray-300 w-fit text-black py-2 px-4 border border-gray-500 rounded-full">
           {category}{" "}
