@@ -15,7 +15,7 @@ const ProductCard: React.FC<Product> = (product) => {
     <div className="flex flex-col justify-between gap-2 max-w-80 h-[32rem] p-3 border border-gray-300 rounded-md  bg-gray-200">
       <div className="flex h-[70%] overflow-hidden ">
         <Image
-          priority
+          loading="lazy"
           src={image}
           alt={description}
           width={300}
@@ -43,7 +43,7 @@ const ProductCard: React.FC<Product> = (product) => {
 
           <MainButton
             onClick={() => addToCart({ ...product })}
-            ariaLabel={`Adicionar: ${name} ao carrinho`}
+            ariaLabel={`Adicionar ${name} ao carrinho`}
             variant="white"
           >
             <CartIcon ariaLabel={`Adicionar ${name} ao carrinho`} />
