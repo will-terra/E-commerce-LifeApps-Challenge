@@ -9,6 +9,7 @@ const Pagination: React.FC = () => {
 
   const handlePageChange = (newPage: number) => {
     fetchProducts(newPage, itemsPerPage, selectedValue);
+    window.scrollTo({ top: 300, behavior: "smooth" });
   };
 
   return (
