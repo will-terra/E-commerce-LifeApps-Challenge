@@ -7,7 +7,9 @@ Projeto desenvolvido como avaliação técnica para a vaga de Front-end na LifeA
 - Next.js 15 (App Router)
 - React 19 com TypeScript
 - Gerenciamento de estado com Context API
-- UI Components: Base UI (acessibilidade nativa)
+- UI Components:
+      Arquitetura Atomic Design (Atoms → Molecules → Organisms)
+      Base UI para acessibilidade nativa∙ 
 - Estilização: Design responsivo com Tailwind CSS
 - Confiabilidade: Testes E2E executados com Cypress
 
