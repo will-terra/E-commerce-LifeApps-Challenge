@@ -24,7 +24,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     <section className="flex flex-col lg:flex-row justify-center m-auto gap-4 2xl:gap-16 bg-gray-100">
       <div className="flex max-w-[95%] lg:max-w-1/2  mx-4 justify-center items-center">
         <Image
-          priority
+          loading="lazy"
           src={image}
           alt={name}
           width={600}
