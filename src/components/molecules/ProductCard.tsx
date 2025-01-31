@@ -33,10 +33,12 @@ const ProductCard: React.FC<Product> = (product) => {
         ) : (
           <p className="text-lg text-red-800">{price}R$</p>
         )}
-        <div className="flex gap-2 mt-2">
+        <div className="flex gap-4 mt-2">
           <MainButton
             href={`/products/${id}`}
             ariaLabel={`Acessar mais detalhes de: ${name}`}
+            className="px-2"
+            size="small"
           >
             + Detalhes{" "}
           </MainButton>
@@ -45,6 +47,8 @@ const ProductCard: React.FC<Product> = (product) => {
             onClick={() => addToCart({ ...product })}
             ariaLabel={`Adicionar ${name} ao carrinho`}
             variant="white"
+            size="small"
+            className="px-2"
           >
             <CartIcon ariaLabel={`Adicionar ${name} ao carrinho`} />
           </MainButton>

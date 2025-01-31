@@ -75,6 +75,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           ariaLabel={`Adicionar ${name} ao carrinho`}
           variant="white"
           size="large"
+          className="px-2"
         >
           <CartIcon ariaLabel={`ícone do carrinho`} /> Adicionar ao carrinho
         </MainButton>

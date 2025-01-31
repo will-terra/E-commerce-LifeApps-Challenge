@@ -44,7 +44,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ className }) => {
         <CartDialog />
         <MainButton
           onClick={removeAllFromCart}
-          className="px-10"
+          className="px-12"
           ariaLabel="Limpar todos itens do carrinho"
           variant="white"
           size="large"
