@@ -7,7 +7,7 @@ const CartItems: React.FC = () => {
   const { cart } = useAppContext();
 
   return (
-    <div className="flex flex-col w-full gap-4 py-4 mt-8 lg:mt-0">
+    <div className="flex flex-col w-full gap-4 py-4 px-4 lg:px-0 mt-8 lg:mt-0">
       {cart.map((item) => (
         <CartCard key={item.id} product={item} />
       ))}{" "}
