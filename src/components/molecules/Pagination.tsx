@@ -24,7 +24,7 @@ const Pagination: React.FC = () => {
       </button>
 
       <div className="flex items-center gap-2">
-        <span>
+        <span aria-live="assertive" aria-label={`Página:`}>
           {currentPage} de {totalPages}
         </span>
       </div>
