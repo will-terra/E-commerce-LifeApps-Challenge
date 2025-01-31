@@ -33,7 +33,11 @@ const CartDialog: React.FC = () => {
           </Dialog.Description>
           <div>
             <Dialog.Close onClick={() => removeAllFromCart()}>
-              <AssistButton ariaLabel="Fechar a notificação">
+              <AssistButton
+                className="px-6"
+                size="large"
+                ariaLabel="Fechar a notificação"
+              >
                 Fechar
               </AssistButton>
             </Dialog.Close>
