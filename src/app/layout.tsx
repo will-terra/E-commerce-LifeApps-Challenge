@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import "./globals.css";
 
 import Header from "@/components/atoms/Header";
@@ -26,10 +28,13 @@ export default function RootLayout({
           <div className="sticky top-0 z-50">
             <NavBar />
           </div>
-          <div className="Root flex-grow">{children}</div>
+          <div className="Root flex-grow">
+            {children} <SpeedInsights />
+          </div>
           <Footer />
         </body>
       </AppContextProvider>
+      x{" "}
     </html>
   );
 }
