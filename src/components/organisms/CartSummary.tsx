@@ -1,7 +1,8 @@
 "use client";
 import MainButton from "../atoms/MainButton";
-import { useAppContext } from "@/contexts/AppProvider";
 import CartDialog from "../molecules/CartDialog";
+
+import { useAppContext } from "@/contexts/AppProvider";
 
 interface CartSummaryProps {
   device: "mobile" | "desktop";

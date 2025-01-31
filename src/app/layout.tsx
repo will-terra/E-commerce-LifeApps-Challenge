@@ -5,9 +5,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 import Header from "@/components/atoms/Header";
-import NavBar from "@/components/organisms/NavBar";
 import Footer from "@/components/molecules/Footer";
-
+import NavBar from "@/components/organisms/NavBar";
 import { AppContextProvider } from "@/contexts/AppProvider";
 
 export const metadata: Metadata = {

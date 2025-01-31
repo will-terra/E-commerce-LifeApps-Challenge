@@ -1,5 +1,5 @@
-import CartActions from "../molecules/CartActions";
 import Logo from "../atoms/Logo";
+import CartActions from "../molecules/CartActions";
 
 const NavBar: React.FC = () => {
   return (

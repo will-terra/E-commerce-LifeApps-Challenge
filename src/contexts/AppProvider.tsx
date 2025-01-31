@@ -7,9 +7,9 @@ import {
   ReactNode,
 } from "react";
 
-import { AppContextProps } from "@/types/AppContext";
 import { useFetchProducts } from "@/hooks/useFetchProducts";
 import { useCart } from "@/hooks/useCart";
+import { AppContextProps } from "@/types/AppContext";
 import { Product } from "@/types/Product";
 
 const AppContext = createContext<AppContextProps | undefined>(undefined);

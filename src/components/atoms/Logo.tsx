@@ -1,6 +1,7 @@
 import Link from "next/link";
-
-import { LogoProps } from "@/types/Logo";
+interface LogoProps {
+  variant: "black" | "white";
+}
 
 const Logo: React.FC<LogoProps> = ({ variant = "black" }) => {
   const styles = `text-[2.5rem] font-black ml-4 xl:ml-12 ${
