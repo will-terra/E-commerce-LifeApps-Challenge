@@ -21,7 +21,8 @@ Projeto desenvolvido como avaliação técnica para a vaga de Front-end na LifeA
 ## ▶️ Como executar
 
 ```bash
-git clone [url-do-repo]
+git clone https://github.com/will-terra/E-commerce-LifeApps-Challenge.git
+cd E-commerce-LifeApps-Challenge
 npm install
 npx next dev
 ```
