@@ -27,11 +27,11 @@ const ProductCard: React.FC<Product> = (product) => {
         <h1 className="text-lg font-bold">{name}</h1>
         {promotional_price ? (
           <div className="flex gap-1">
-            <p className="line-through text-gray-500 text-lg">{price}R$</p> -
-            <p className="text-lg ">{promotional_price}R$</p>
+            <p className="line-through text-gray-900 text-lg">{price}R$</p> -
+            <p className="text-lg text-red-800">{promotional_price}R$</p>
           </div>
         ) : (
-          <p className="text-lg ">{price}R$</p>
+          <p className="text-lg text-red-800">{price}R$</p>
         )}
         <div className="flex gap-2 mt-2">
           <MainButton
