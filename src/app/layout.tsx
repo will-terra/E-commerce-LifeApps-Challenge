@@ -20,19 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="global-html">
-      <body className="h-screen">
-        <AppContextProvider>
-          <div className="flex flex-col justify-between h-full bg-gray-100 ">
-            <div>
-              <Header />
-              <div className="sticky top-0 z-50">
-                <NavBar />
-              </div>
-            </div>
-            <div className="Root h-full">{children}</div> <Footer />
+      <AppContextProvider>
+        <body className="bg-gray-100">
+          <Header />
+          <div className="sticky top-0 z-50">
+            <NavBar />
           </div>
-        </AppContextProvider>
-      </body>
+          <div className="Root flex-grow">{children}</div>
+          <Footer />
+        </body>
+      </AppContextProvider>
     </html>
   );
 }
