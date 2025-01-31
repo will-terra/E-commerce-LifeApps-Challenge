@@ -1,6 +1,6 @@
 # E-commerce LifeApps Challenge 🛒
 
-Projeto desenvolvido como avaliação técnica para a vaga de Front-end na LifeApps. E-commerce completo com foco em performance e acessibilidade, utilizando as melhores práticas do ecossistema React.
+Projeto desenvolvido como avaliação técnica para a vaga de Front-end na LifeApps. E-commerce completo com foco em acessibilidade, seguindo os princípios WCAG.
 
 ## 🚀 Tecnologias-chave
 

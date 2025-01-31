@@ -1,6 +1,5 @@
 import CartActions from "../molecules/CartActions";
 import Logo from "../atoms/Logo";
-import ProfileIcon from "../atoms/ProfileIcon";
 
 const NavBar: React.FC = () => {
   return (
@@ -9,14 +8,9 @@ const NavBar: React.FC = () => {
         <li>
           <Logo variant="black" />
         </li>
-        <div className="flex justify-around items-center mr-4 xl:mr-20">
-          <li>
-            <ProfileIcon />
-          </li>
-          <li>
-            <CartActions />
-          </li>
-        </div>
+        <li className="mr-4 xl:mr-20">
+          <CartActions />
+        </li>
       </ul>
     </nav>
   );
