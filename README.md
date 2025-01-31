@@ -23,6 +23,8 @@ Projeto desenvolvido como avaliação técnica para a vaga de Front-end na LifeA
 
 ## ▶️ Como executar
 
+- Ambiente de execução: [Node.js](https://nodejs.org/ "Site oficial do Node.js")
+
 ```bash
 git clone https://github.com/will-terra/E-commerce-LifeApps-Challenge.git
 cd E-commerce-LifeApps-Challenge
