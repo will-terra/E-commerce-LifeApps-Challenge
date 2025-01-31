@@ -2,7 +2,7 @@ describe("Home", () => {
   beforeEach(() => {
     cy.viewport(1600, 900);
     cy.visit(`${Cypress.config().baseUrl}/`);
-    cy.wait(2000);
+    cy.wait(3000);
     // Carregar a página inicial
     cy.contains("Verão 2025");
   });
