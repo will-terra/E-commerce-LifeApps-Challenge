@@ -1,16 +1,14 @@
 "use client";
 import { useAppContext } from "@/contexts/AppProvider";
-import { useState } from "react";
 
 const Pagination: React.FC = () => {
   const { pagination, itemsPerPage, fetchProducts, selectedValue } =
     useAppContext();
   const { prevPage, nextPage, totalPages } = pagination;
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const currentPage = prevPage !== null ? prevPage + 1 : 1;
 
   const handlePageChange = (newPage: number) => {
     fetchProducts(newPage, itemsPerPage, selectedValue);
-    setCurrentPage(newPage);
   };
 
   return (

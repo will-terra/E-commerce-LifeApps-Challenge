@@ -34,7 +34,7 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   const { products, fetchProducts, fetchAllProducts, pagination } =
     useFetchProducts();
 
-  const itemsPerPage = 6;
+  const itemsPerPage = 4;
   const {
     cart,
     addToCart,
@@ -45,7 +45,7 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   } = useCart();
 
   useEffect(() => {
-    fetchProducts(1, 6, "");
+    fetchProducts(1, itemsPerPage, "");
   }, []);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   }, []);
 
   useEffect(() => {
-    fetchProducts(1, 6, selectedValue);
+    fetchProducts(1, itemsPerPage, selectedValue);
   }, [selectedValue]);
 
   return (

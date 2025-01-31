@@ -1,5 +1,5 @@
 import { CartItem } from "./Cart";
-import { Product } from "./Product";
+import { PaginationApiResponse, Product } from "./Product";
 
 export interface AppContextProps {
   selectedValue: string;
@@ -10,12 +10,12 @@ export interface AppContextProps {
     newPage: number,
     itemsPerPage: number,
     selectedValue: string
-  ) => Promise<void>;
+  ) => Promise<PaginationApiResponse>;
   itemsPerPage: number;
   pagination: {
     totalPages: number;
-    prevPage: number;
-    nextPage: number;
+    prevPage: number | null;
+    nextPage: number | null;
     lastPage: number;
   };
   cart: CartItem[];
