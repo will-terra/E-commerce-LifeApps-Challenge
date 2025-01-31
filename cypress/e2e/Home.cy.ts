@@ -11,9 +11,7 @@ describe("Home", () => {
     // Adicionar quatro itens ao carrinho
     cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click().click();
     cy.get(":nth-child(2) > .flex-col > .gap-2 > .bg-white").click().click();
-    cy.get(".justify-around > :nth-child(2) > .flex > .text-black").contains(
-      "4"
-    );
+    cy.get(".mr-4 > .flex > .text-black").contains("4");
     // Navegar para próxima página
     cy.get('[aria-label="Próxima página"]').click();
     cy.get("span").contains("2 de 4");
@@ -21,9 +19,7 @@ describe("Home", () => {
     // Adicionar quatro itens ao carrinho
     cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click().click();
     cy.get(":nth-child(2) > .flex-col > .gap-2 > .bg-white").click().click();
-    cy.get(".justify-around > :nth-child(2) > .flex > .text-black").contains(
-      "8"
-    );
+    cy.get(".mr-4 > .flex > .text-black").contains("8");
 
     // Navegar para página anterior
     cy.get(".tab-0").click();
