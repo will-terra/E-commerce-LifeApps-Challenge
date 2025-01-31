@@ -54,6 +54,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
           onClick={() => removeFromCart(product)}
           variant="white"
           size="small"
+          className="px-5"
         >
           <Image src="/Trash.svg" alt="Lixeira" width={20} height={20} />
         </MainButton>
