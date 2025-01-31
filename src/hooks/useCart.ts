@@ -51,7 +51,6 @@ export const useCart: useCartHook = () => {
   };
 
   const removeAllFromCart = () => {
-    console.log("removing all from cart");
     setCart([]);
   };
 

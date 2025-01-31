@@ -1,16 +1,19 @@
 "use client";
 import MainButton from "../atoms/MainButton";
 import { useAppContext } from "@/contexts/AppProvider";
-import CartDialog from "./CartDialog";
+import CartDialog from "../molecules/CartDialog";
 
 interface CartSummaryProps {
-  className?: string;
+  device: "mobile" | "desktop";
 }
 
-const CartSummary: React.FC<CartSummaryProps> = ({ className }) => {
+const CartSummary: React.FC<CartSummaryProps> = ({ device }) => {
   const { cartTotal, removeAllFromCart } = useAppContext();
   const freeShipping = cartTotal > 199;
-
+  const className =
+    device === "mobile"
+      ? "flex flex-col self-center lg:hidden w-[90%] max-w-[40rem]  px-6 py-4 mb-4"
+      : "hidden lg:flex lg:flex-col w-[80%] px-12 py-8 mt-14 mr-8";
   return (
     <div
       className={`${className} border border-gray-500 h-fit bg-gray-200 rounded-md `}
