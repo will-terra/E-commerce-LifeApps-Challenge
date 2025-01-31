@@ -1,6 +1,6 @@
 # E-commerce LifeApps Challenge 🛒
 
-Projeto desenvolvido como avaliação técnica para a vaga de desenvolvedor Front-end na LifeApps. Consiste em um E-commerce completo, com foco em acessibilidade, seguindo os princípios WCAG 2.2.
+Projeto desenvolvido como avaliação técnica para a vaga de desenvolvedor Front-end na LifeApps. Consiste em um E-commerce completo, com foco em acessibilidade, seguindo os princípios WCAG 2.2. contando com uma ótima integração a leitores de tela, cores acessíveis, navegaçaõ pelo teclado, e amplas áreas clicáveis.
 
 ## Instruções do Projeto
 
@@ -48,7 +48,7 @@ npx cypress open
 ```
 
 Escolha seu navegador de preferência.
-Execute todos Specs um a um.
+Execute todos Specs, um a um.
 
 ** Se o projeto não estiver rodando em http://localhost:3000 você dever alterar para a baseUrl correspondente em cypress.config.ts **
 

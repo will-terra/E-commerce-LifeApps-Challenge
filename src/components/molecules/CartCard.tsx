@@ -30,12 +30,12 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
         <p className="text-2xl text-black">
           {promotional_price ? promotional_price : price}R$
         </p>
-        <div className="flex justify-center items-center w-16 gap-2 bg-gray-300 border border-gray-500 rounded xl px-2">
+        <div className="flex justify-center items-center w-fit gap-2 bg-gray-300 border border-gray-500 rounded xl px-2">
           <button
             aria-label={`Remover um ${name} do carrinho`}
             onClick={() => removeFromCart(product)}
             disabled={quantity < 2}
-            className="text-3xl disabled:cursor-not-allowed"
+            className="text-3xl mx-2 disabled:cursor-not-allowed"
           >
             -{" "}
           </button>
@@ -50,7 +50,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
           <button
             aria-label={`Adicionar um ${name} ao carrinho`}
             onClick={() => addToCart(product)}
-            className="text-2xl"
+            className="text-2xl mx-2"
           >
             +
           </button>
@@ -61,7 +61,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
           onClick={() => removeFromCart(product)}
           variant="white"
           size="small"
-          className="px-5"
+          className="px-8 mt-2"
         >
           <Image src="/Trash.svg" alt="Lixeira" width={20} height={20} />
         </MainButton>
