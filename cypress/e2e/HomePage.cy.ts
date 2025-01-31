@@ -5,28 +5,27 @@ describe("Home Page", () => {
     cy.wait(2000);
   });
 
-  it("Load the home page", () => {
+  it("Complete home page flow", () => {
+    // Carregar a página inicial
     cy.contains("Verão 2025");
-  });
 
-  it("Add four items to cart", () => {
+    // Adicionar quatro itens ao carrinho
     cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click().click();
     cy.get(":nth-child(2) > .flex-col > .gap-2 > .bg-white").click().click();
     cy.get(".justify-around > :nth-child(2) > .flex > .text-black").contains(
       "4"
     );
-  });
-  it("Navigate to the next page", () => {
-    cy.get('[aria-label="Próxima página"]').click();
-    cy.get("span").contains("2 de 3");
-  });
 
-  it("Filter by category", () => {
+    // Navegar para a próxima página
+    cy.get('[aria-label="Próxima página"]').click();
+    cy.get("span").contains("2 de 4");
+
+    // Filtrar por categoria
     cy.get('[value="Camisetas"] > .flex').click();
     cy.get(".grid").should("not.contain", "Tênis");
-  });
+    cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click();
 
-  it("Navigates to cart", () => {
+    // Navegar para o carrinho
     cy.get(":nth-child(2) > .flex > div > .mx-2").click();
     cy.url().should("be.equal", `${Cypress.config().baseUrl}/cart`);
   });
