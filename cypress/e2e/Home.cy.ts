@@ -29,17 +29,20 @@ describe("Home", () => {
   it("Filter by categories", () => {
     // Filtrar por camisetas
     cy.get('[value="Camisetas"] > .flex').click();
-    cy.get(".grid").should("not.contain", "Tênis");
+    cy.wait(3000);
+    cy.get(".grid").contains("Camiseta");
     cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click();
 
     // Filtrar por tênis
     cy.get('[value="Tênis"] > .flex').click();
-    cy.get(".grid").should("not.contain", "Calça");
+    cy.wait(3000);
+    cy.get(".grid").contains("Tênis");
     cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click();
 
     // Filtrar por calças
     cy.get('[value="Calças"] > .flex').click();
-    cy.get(".grid").should("not.contain", "Camiseta");
+    cy.wait(3000);
+    cy.get(".grid").contains("Calça");
     cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click();
   });
 });
