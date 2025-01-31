@@ -25,3 +25,5 @@ git clone [url-do-repo]
 npm install
 npx next dev
 ```
+
+# E-commerce-LifeApps-Challenge
