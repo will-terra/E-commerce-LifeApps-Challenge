@@ -45,7 +45,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ className }) => {
       </p>
       <div className="flex justify-around flex-col md-flex-row items-center gap-4">
         <Dialog.Root>
-          <Dialog.Trigger>
+          <Dialog.Trigger aria-haspopup="dialog">
             <AssistButton
               className="px-8"
               ariaLabel="Finalizar pedido"
