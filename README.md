@@ -1,6 +1,6 @@
 # E-commerce LifeApps Challenge 🛒 [![Vercel Deployed](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat&logo=vercel)](https://e-commerce-life-apps-challenge.vercel.app/)
 
-![Project Preview](./public/screenshot.jpg) <!-- Add a screenshot path if available -->
+![Project Preview](https://imgur.com/a/TeZXqhy)
 
 Projeto desenvolvido como avaliação técnica para a vaga de desenvolvedor Front-end na LifeApps. Um E-commerce completo com foco em **acessibilidade de alto nível**, implementando as melhores práticas do WCAG 2.2.
 
@@ -64,4 +64,4 @@ Execute todos Specs, um a um.
 Acesse a versão de produção otimizada:
 https://e-commerce-life-apps-challenge.vercel.app/
 
-# Desenvolvido por William Terra (wpterra@outlook.com)
+**Desenvolvido por William Terra (wpterra@outlook.com)**
