@@ -53,6 +53,7 @@ Com o projeto rodando:
 npx cypress open
 ```
 
+Selecione E2E testing.
 Escolha seu navegador de preferência.
 Execute todos Specs, um a um.
 
