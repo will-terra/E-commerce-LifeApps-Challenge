@@ -1,22 +1,28 @@
-# E-commerce LifeApps Challenge 🛒
+# E-commerce LifeApps Challenge 🛒 [![Vercel Deployed](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat&logo=vercel)](https://e-commerce-life-apps-challenge.vercel.app/)
 
-Projeto desenvolvido como avaliação técnica para a vaga de desenvolvedor Front-end na LifeApps. Consiste em um E-commerce completo, com foco em acessibilidade, seguindo os princípios WCAG 2.2. contando com uma ótima integração a leitores de tela, cores acessíveis, navegaçaõ pelo teclado, e amplas áreas clicáveis.
+![Project Preview](./public/screenshot.jpg) <!-- Add a screenshot path if available -->
+
+Projeto desenvolvido como avaliação técnica para a vaga de desenvolvedor Front-end na LifeApps. Um E-commerce completo com foco em **acessibilidade de alto nível**, implementando as melhores práticas do WCAG 2.2.
+
+✨ **Destaques Técnicos**  
+✅ Navegação 100% via teclado & leitores de tela  
+✅ Contraste de cores AAA para daltonismo e baixa visão  
+✅ Semântica HTML rigorosa com ARIA landmarks  
+✅ Componentes reutilizáveis com Atomic Design  
+✅ Testes E2E cobrindo fluxos críticos
+
+## 🚀 Tecnologias
+
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwind-css)](https://tailwindcss.com/)
+[![Cypress](https://img.shields.io/badge/Cypress-13-17202C?logo=cypress)](https://www.cypress.io/)
 
 ## Instruções do Projeto
 
 Para acessar os requisitos técnicos e detalhes da prova, consulte:  
 [Repositório Oficial da Prova Frontend](https://github.com/devlifeapps/Prova-Frontend-Lifeapps)
-
-## 🚀 Tecnologias-chave
-
-- Next.js 15 (App Router)
-- React 19 com TypeScript
-- Gerenciamento de estado com Context API
-- UI Components:
-  Arquitetura Atomic Design (Atoms → Molecules → Organisms)
-  Base UI para acessibilidade nativa∙
-- Estilização: Design responsivo com Tailwind CSS
-- Confiabilidade: Testes E2E executados com Cypress
 
 ## ✨ Funcionalidades
 
@@ -52,8 +58,9 @@ Execute todos Specs, um a um.
 
 ** Se o projeto não estiver rodando em http://localhost:3000 você dever alterar para a baseUrl correspondente em cypress.config.ts **
 
-## Veja o projeto rodando em um ambiente de produção
+## 🌐 Demo Online
 
-Acesse: [E-commerce Lifeapps](https://e-commerce-life-apps-challenge.vercel.app/)
+Acesse a versão de produção otimizada:
+https://e-commerce-life-apps-challenge.vercel.app/
 
-# E-commerce-LifeApps-Challenge 🛒
+# Desenvolvido por William Terra (wpterra@outlook.com)
