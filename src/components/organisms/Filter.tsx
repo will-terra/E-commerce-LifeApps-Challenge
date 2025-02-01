@@ -3,7 +3,7 @@ import FilterDesktop from "../molecules/FilterDesktop";
 
 const Filter: React.FC = () => {
   return (
-    <section className="flex flex-col justify-center items-center gap-4 mt-8 mb-12">
+    <section className="flex flex-col justify-center items-center gap-4 my-6 xl:my-8">
       <div className="flex place-self-start xl:hidden ml-8">
         <FilterMobile />
       </div>

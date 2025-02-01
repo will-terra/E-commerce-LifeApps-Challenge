@@ -12,19 +12,19 @@ const ProductCard: React.FC<Product> = (product) => {
   const { addToCart } = useAppContext();
 
   return (
-    <div className="flex flex-col justify-between gap-2 max-w-80 h-[32rem] p-3 border border-gray-300 rounded-md  bg-gray-200">
-      <div className="flex h-[70%] overflow-hidden ">
+    <div className="flex flex-col max-w-80 h-full max-h-[32rem] p-3 border border-gray-300 rounded-md  bg-gray-200">
+      <div className="flex h-full overflow-hidden ">
         <Image
           loading="lazy"
           src={image}
           alt={description}
           width={300}
-          height={225}
+          height={250}
           className={"object-cover place-self-center"}
         />
       </div>
       <div className="flex flex-col justify-between">
-        <h1 className="text-lg font-bold">{name}</h1>
+        <h1 className="text-lg font-bold mt-2">{name}</h1>
         {promotional_price ? (
           <div className="flex gap-1">
             <p className="line-through text-gray-900 text-lg">{price}R$</p> -
