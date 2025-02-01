@@ -7,6 +7,7 @@ interface MainButtonProps {
   size?: "small" | "large";
   variant?: "black" | "white";
   href?: string;
+  disabled?: boolean;
   className?: string;
 }
 
@@ -17,6 +18,7 @@ const MainButton: React.FC<MainButtonProps> = ({
   size = "small",
   variant = "black",
   href,
+  disabled = false,
   className,
 }) => {
   const options = `flex justify-center items-center cursor-pointer hover:bg-gray-600 ${className} ${
@@ -46,6 +48,7 @@ const MainButton: React.FC<MainButtonProps> = ({
       className={options}
       onClick={onClick}
       aria-label={ariaLabel}
+      disabled={disabled}
     >
       {children}
     </button>

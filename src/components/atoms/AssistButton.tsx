@@ -3,6 +3,7 @@ interface AssistButtonProps {
   ariaLabel: string;
   size?: "small" | "large";
   variant?: "black" | "white";
+  disabled?: boolean;
   className?: string;
 }
 
@@ -11,6 +12,7 @@ const AssistButton: React.FC<AssistButtonProps> = ({
   ariaLabel,
   size = "small",
   variant = "black",
+  disabled = false,
   className,
 }) => {
   const options = `${className} flex justify-center items-center cursor-pointer hover:bg-gray-600 ${
@@ -22,7 +24,11 @@ const AssistButton: React.FC<AssistButtonProps> = ({
   } rounded-md border border-black`;
 
   return (
-    <div tabIndex={0} className={options} aria-label={ariaLabel}>
+    <div
+      tabIndex={0}
+      aria-label={ariaLabel}
+      className={`${options} ${disabled ? "cursor-not-allowed" : ""}`}
+    >
       {children}
     </div>
   );

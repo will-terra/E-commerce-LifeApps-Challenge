@@ -9,7 +9,7 @@ interface CartSummaryProps {
 }
 
 const CartSummary: React.FC<CartSummaryProps> = ({ device }) => {
-  const { cartTotal, removeAllFromCart } = useAppContext();
+  const { cartTotal, cartQuantity, removeAllFromCart } = useAppContext();
   const freeShipping = cartTotal > 199;
   const className =
     device === "mobile"
@@ -48,10 +48,11 @@ const CartSummary: React.FC<CartSummaryProps> = ({ device }) => {
         <CartDialog />
         <MainButton
           onClick={removeAllFromCart}
-          className="px-12"
+          className="px-12 disabled:opacity-50 disabled:cursor-not-allowed"
           ariaLabel="Limpar todos itens do carrinho"
           variant="white"
           size="large"
+          disabled={cartQuantity === 0}
         >
           Limpar carrinho
         </MainButton>{" "}

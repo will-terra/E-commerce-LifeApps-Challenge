@@ -5,7 +5,7 @@ import AssistButton from "../atoms/AssistButton";
 import { useAppContext } from "@/contexts/AppProvider";
 
 const CartDialog: React.FC = () => {
-  const { removeAllFromCart } = useAppContext();
+  const { cartQuantity, removeAllFromCart } = useAppContext();
   const backdrop =
     "fixed inset-0 bg-black opacity-20 transition-all duration-150 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:opacity-70";
   const popup =
@@ -13,11 +13,16 @@ const CartDialog: React.FC = () => {
 
   return (
     <Dialog.Root>
-      <Dialog.Trigger aria-haspopup="dialog">
+      <Dialog.Trigger
+        aria-haspopup="dialog"
+        disabled={cartQuantity === 0}
+        className="disabled:opacity-50"
+      >
         <AssistButton
           className="px-12"
           ariaLabel="Finalizar pedido"
           size="large"
+          disabled={cartQuantity === 0}
         >
           Finalizar pedido
         </AssistButton>
