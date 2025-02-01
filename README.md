@@ -52,4 +52,8 @@ Execute todos Specs, um a um.
 
 ** Se o projeto não estiver rodando em http://localhost:3000 você dever alterar para a baseUrl correspondente em cypress.config.ts **
 
+## Veja o projeto rodando em um ambiente de produção
+
+Acesse: [E-commerce Lifeapps](https://e-commerce-life-apps-challenge.vercel.app/)
+
 # E-commerce-LifeApps-Challenge 🛒
