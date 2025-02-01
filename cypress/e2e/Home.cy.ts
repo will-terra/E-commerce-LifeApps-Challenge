@@ -9,16 +9,16 @@ describe("Home", () => {
 
   it("Navigates through pagination", () => {
     // Adicionar quatro itens ao carrinho
-    cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click().click();
-    cy.get(":nth-child(2) > .flex-col > .gap-2 > .bg-white").click().click();
+    cy.get(":nth-child(1) > .flex-col > .gap-4 > .bg-white").click().click();
+    cy.get(":nth-child(2) > .flex-col > .gap-4 > .bg-white").click().click();
     cy.get(".mr-4 > .flex > .text-black").contains("4");
     // Navegar para próxima página
     cy.get('[aria-label="Próxima página"]').click();
     cy.get("span").contains("2 de 4");
 
     // Adicionar quatro itens ao carrinho
-    cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click().click();
-    cy.get(":nth-child(2) > .flex-col > .gap-2 > .bg-white").click().click();
+    cy.get(":nth-child(1) > .flex-col > .gap-4 > .bg-white").click().click();
+    cy.get(":nth-child(2) > .flex-col > .gap-4 > .bg-white").click().click();
     cy.get(".mr-4 > .flex > .text-black").contains("8");
 
     // Navegar para página anterior
@@ -31,18 +31,18 @@ describe("Home", () => {
     cy.get('[value="Camisetas"] > .flex').click();
     cy.wait(3000);
     cy.get(".grid").contains("Camiseta");
-    cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click();
+    cy.get(":nth-child(1) > .flex-col > .gap-4 > .bg-white").click();
 
     // Filtrar por tênis
     cy.get('[value="Tênis"] > .flex').click();
     cy.wait(3000);
     cy.get(".grid").contains("Tênis");
-    cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click();
+    cy.get(":nth-child(1) > .flex-col > .gap-4 > .bg-white").click();
 
     // Filtrar por calças
     cy.get('[value="Calças"] > .flex').click();
     cy.wait(3000);
     cy.get(".grid").contains("Calça");
-    cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-white").click();
+    cy.get(":nth-child(1) > .flex-col > .gap-4 > .bg-white").click();
   });
 });

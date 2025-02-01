@@ -9,7 +9,7 @@ describe("Home Page", () => {
     cy.contains("Verão 2025");
 
     // Navega até a página de detalhes do produto
-    cy.get(":nth-child(1) > .flex-col > .gap-2 > .bg-black").click();
+    cy.get(":nth-child(1) > .flex-col > .gap-4 > .bg-black").click();
     cy.wait(3000);
     cy.url().should("contain", `${Cypress.config().baseUrl}/products/`);
 
