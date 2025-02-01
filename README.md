@@ -1,6 +1,6 @@
 # E-commerce LifeApps Challenge 🛒 [![Vercel Deployed](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat&logo=vercel)](https://e-commerce-life-apps-challenge.vercel.app/)
 
-![Project Preview](https://imgur.com/a/TeZXqhy)
+![Project Preview](https://i.imgur.com/FnRvIbm.png)
 
 Projeto desenvolvido como avaliação técnica para a vaga de desenvolvedor Front-end na LifeApps. Um E-commerce completo com foco em **acessibilidade de alto nível**, implementando as melhores práticas do WCAG 2.2.
 
