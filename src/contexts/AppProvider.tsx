@@ -45,11 +45,6 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   } = useCart();
 
   useEffect(() => {
-    fetchProducts(1, itemsPerPage, "");
-    // eslint-disable-next-line
-  }, []);
-
-  useEffect(() => {
     fetchAllProducts().then((data) => {
       setAllProducts(data);
     });
