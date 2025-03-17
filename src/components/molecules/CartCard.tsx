@@ -3,11 +3,15 @@ import Image from "next/image";
 import MainButton from "../atoms/MainButton";
 
 import { useAppContext } from "@/contexts/AppProvider";
+import { addToCart } from "@/slices/cartSlice";
+import { useCartDispatch } from "@/hooks/useCart";
 
 import { CartCardProps } from "@/types/Cart";
 
 const CartCard: React.FC<CartCardProps> = ({ product }) => {
-  const { addToCart, removeFromCart } = useAppContext();
+  const { removeFromCart } = useAppContext();
+  const dispatch = useCartDispatch();
+
   const { name, category, price, promotional_price, image, quantity } = product;
 
   return (
@@ -49,7 +53,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
           </p>
           <button
             aria-label={`Adicionar um ${name} ao carrinho`}
-            onClick={() => addToCart(product)}
+            onClick={() => dispatch(addToCart(product))}
             className="text-2xl mx-2"
           >
             +

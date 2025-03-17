@@ -8,35 +8,6 @@ import { AppDispatch, RootState } from "@/app/store";
 export const useCart: useCartHook = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  useEffect(() => {
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-    if (cart.length === 0) {
-      localStorage.removeItem("cart");
-    }
-  }, [cart]);
-
-  const addToCart = (product: Product) => {
-    setCart((prev) => {
-      const existingProduct = prev.find((item) => item.id === product.id);
-      if (existingProduct) {
-        return prev.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      } else {
-        return [...prev, { ...product, quantity: 1 }];
-      }
-    });
-  };
-
   const removeFromCart = (product: Product) => {
     setCart((prev) => {
       const existingProduct = prev.find((item) => item.id === product.id);
@@ -67,7 +38,6 @@ export const useCart: useCartHook = () => {
 
   return {
     cart,
-    addToCart,
     removeFromCart,
     removeAllFromCart,
     cartTotal,

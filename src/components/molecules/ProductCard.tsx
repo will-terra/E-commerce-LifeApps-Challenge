@@ -3,13 +3,14 @@ import Image from "next/image";
 import MainButton from "../atoms/MainButton";
 import CartIcon from "../atoms/CartIcon";
 
-import { useAppContext } from "@/contexts/AppProvider";
+import { useCartDispatch } from "@/hooks/useCart";
+import { addToCart } from "@/slices/cartSlice";
 
 import { Product } from "@/types/Product";
 
 const ProductCard: React.FC<Product> = (product) => {
   const { id, name, price, promotional_price, image, description } = product;
-  const { addToCart } = useAppContext();
+  const dispatch = useCartDispatch();
 
   return (
     <div className="flex flex-col max-w-80 h-full max-h-[32rem] p-3 border border-gray-300 rounded-md  bg-gray-200">
@@ -44,7 +45,7 @@ const ProductCard: React.FC<Product> = (product) => {
           </MainButton>
 
           <MainButton
-            onClick={() => addToCart({ ...product })}
+            onClick={() => dispatch(addToCart(product))}
             ariaLabel={`Adicionar ${name} ao carrinho`}
             variant="white"
             size="small"

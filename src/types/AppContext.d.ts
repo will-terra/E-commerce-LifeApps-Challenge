@@ -21,7 +21,6 @@ export interface AppContextProps {
   cart: CartItem[];
   cartTotal: number;
   cartQuantity: number;
-  addToCart: (product: Product) => void;
   removeFromCart: (product: Product) => void;
   removeAllFromCart: () => void;
 }

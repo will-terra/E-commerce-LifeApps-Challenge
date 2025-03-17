@@ -15,7 +15,6 @@ export interface CartCardProps {
 export interface useCartHook {
   (): {
     cart: CartItem[];
-    addToCart: (product: Product) => void;
     removeFromCart: (product: Product) => void;
     removeAllFromCart: () => void;
     cartTotal: number;

@@ -37,7 +37,6 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   const itemsPerPage = 4;
   const {
     cart,
-    addToCart,
     removeFromCart,
     removeAllFromCart,
     cartTotal,
@@ -69,7 +68,6 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
         cart,
         cartTotal,
         cartQuantity,
-        addToCart,
         removeFromCart,
         removeAllFromCart,
       }}
