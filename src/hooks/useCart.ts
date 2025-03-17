@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import { Product } from "@/types/Product";
 import { CartItem, useCartHook } from "@/types/Cart";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/app/store";
 
 export const useCart: useCartHook = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -72,3 +74,6 @@ export const useCart: useCartHook = () => {
     cartQuantity,
   };
 };
+
+export const useCartDispatch = useDispatch.withTypes<AppDispatch>()
+export const useCartSelector = useSelector.withTypes<RootState>()
