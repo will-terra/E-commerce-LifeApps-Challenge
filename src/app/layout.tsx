@@ -25,8 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="global-html">
-      <AppContextProvider>
-        <ClientProvider>
+      <ClientProvider>
+        <AppContextProvider>
           <body className="h-[100dvh] flex flex-col bg-gray-100">
             <Header />
             <div className="sticky top-0 z-50">
@@ -37,8 +37,8 @@ export default function RootLayout({
             </div>
             <Footer />
           </body>
-        </ClientProvider>
-      </AppContextProvider>
+        </AppContextProvider>
+      </ClientProvider>
     </html>
   );
 }

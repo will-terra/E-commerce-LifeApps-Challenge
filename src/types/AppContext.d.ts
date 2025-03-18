@@ -18,5 +18,4 @@ export interface AppContextProps {
     nextPage: number | null;
     lastPage: number;
   };
-  cart: CartItem[];
 }

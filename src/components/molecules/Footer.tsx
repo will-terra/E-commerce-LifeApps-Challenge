@@ -7,6 +7,6 @@ const Footer: React.FC = () => {
       <Logo variant="white" />
     </footer>
   );
-};
+}
 
 export default Footer;

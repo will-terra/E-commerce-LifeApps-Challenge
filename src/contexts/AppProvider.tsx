@@ -8,7 +8,6 @@ import {
 } from "react";
 
 import { useFetchProducts } from "@/hooks/useFetchProducts";
-import { useCart } from "@/hooks/useCart";
 import { AppContextProps } from "@/types/AppContext";
 import { Product } from "@/types/Product";
 
@@ -35,9 +34,6 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
     useFetchProducts();
 
   const itemsPerPage = 4;
-  const {
-    cart,
-  } = useCart();
 
   useEffect(() => {
     fetchAllProducts().then((data) => {
@@ -61,7 +57,6 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
         fetchProducts,
         pagination,
         itemsPerPage,
-        cart,
       }}
     >
       {children}

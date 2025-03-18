@@ -2,7 +2,6 @@
 import MainButton from "../atoms/MainButton";
 import CartDialog from "../molecules/CartDialog";
 
-import { useAppContext } from "@/contexts/AppProvider";
 import { useCartDispatch, useCartSelector } from "@/hooks/useCart";
 import { removeAllFromCart } from "@/slices/cartSlice";
 

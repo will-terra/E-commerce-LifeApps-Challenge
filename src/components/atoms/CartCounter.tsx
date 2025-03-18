@@ -1,8 +1,9 @@
+'use client';
+
 import { useCartSelector } from "@/hooks/useCart";
 
 const CartCounter: React.FC = () => {
-  const cartQuantity = useCartSelector
-    ((state) => state.cart.totalQuantity);
+  const cartQuantity = useCartSelector((state) => state.cart.totalQuantity);
 
   return (
     <>
