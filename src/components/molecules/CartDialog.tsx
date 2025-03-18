@@ -2,10 +2,13 @@ import { Dialog } from "@base-ui-components/react";
 
 import AssistButton from "../atoms/AssistButton";
 
-import { useAppContext } from "@/contexts/AppProvider";
+import { useCartDispatch, useCartSelector } from "@/hooks/useCart";
+import { removeAllFromCart } from "@/slices/cartSlice";
 
 const CartDialog: React.FC = () => {
-  const { cartQuantity, removeAllFromCart } = useAppContext();
+  const cartQuantity = useCartSelector((state) => state.cart.totalQuantity);
+  const dispatch = useCartDispatch();
+
   const backdrop =
     "fixed inset-0 bg-black opacity-20 transition-all duration-150 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 dark:opacity-70";
   const popup =
@@ -37,7 +40,7 @@ const CartDialog: React.FC = () => {
             Você concluiu o pedido!
           </Dialog.Description>
           <div>
-            <Dialog.Close onClick={() => removeAllFromCart()}>
+            <Dialog.Close onClick={() => dispatch(removeAllFromCart())}>
               <AssistButton
                 className="px-6"
                 size="large"

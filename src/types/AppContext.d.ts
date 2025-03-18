@@ -19,8 +19,4 @@ export interface AppContextProps {
     lastPage: number;
   };
   cart: CartItem[];
-  cartTotal: number;
-  cartQuantity: number;
-  removeFromCart: (product: Product) => void;
-  removeAllFromCart: () => void;
 }

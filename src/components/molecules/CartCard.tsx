@@ -2,14 +2,12 @@ import Image from "next/image";
 
 import MainButton from "../atoms/MainButton";
 
-import { useAppContext } from "@/contexts/AppProvider";
-import { addToCart } from "@/slices/cartSlice";
 import { useCartDispatch } from "@/hooks/useCart";
+import { addToCart, removeFromCart } from "@/slices/cartSlice";
 
 import { CartCardProps } from "@/types/Cart";
 
 const CartCard: React.FC<CartCardProps> = ({ product }) => {
-  const { removeFromCart } = useAppContext();
   const dispatch = useCartDispatch();
 
   const { name, category, price, promotional_price, image, quantity } = product;
@@ -37,7 +35,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
         <div className="flex justify-center items-center w-fit gap-2 bg-gray-300 border border-gray-500 rounded xl px-2">
           <button
             aria-label={`Remover um ${name} do carrinho`}
-            onClick={() => removeFromCart(product)}
+            onClick={() => dispatch(removeFromCart(product))}
             disabled={quantity < 2}
             className="text-3xl mx-2 disabled:cursor-not-allowed"
           >
@@ -62,7 +60,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
 
         <MainButton
           ariaLabel={`Remover um ${name} do carrinho`}
-          onClick={() => removeFromCart(product)}
+          onClick={() => dispatch(removeFromCart(product))}
           variant="white"
           size="small"
           className="px-8 mt-2"

@@ -11,13 +11,3 @@ export interface CartItem extends Product {
 export interface CartCardProps {
   product: CartItem;
 }
-
-export interface useCartHook {
-  (): {
-    cart: CartItem[];
-    removeFromCart: (product: Product) => void;
-    removeAllFromCart: () => void;
-    cartTotal: number;
-    cartQuantity: number;
-  };
-}

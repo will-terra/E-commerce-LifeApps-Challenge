@@ -3,13 +3,18 @@ import MainButton from "../atoms/MainButton";
 import CartDialog from "../molecules/CartDialog";
 
 import { useAppContext } from "@/contexts/AppProvider";
+import { useCartDispatch, useCartSelector } from "@/hooks/useCart";
+import { removeAllFromCart } from "@/slices/cartSlice";
 
 interface CartSummaryProps {
   device: "mobile" | "desktop";
 }
 
 const CartSummary: React.FC<CartSummaryProps> = ({ device }) => {
-  const { cartTotal, cartQuantity, removeAllFromCart } = useAppContext();
+  const cartTotal = useCartSelector((state) => state.cart.total);
+  const cartQuantity = useCartSelector((state) => state.cart.totalQuantity);
+  const dispatch = useCartDispatch();
+
   const freeShipping = cartTotal > 199;
   const className =
     device === "mobile"
@@ -47,7 +52,7 @@ const CartSummary: React.FC<CartSummaryProps> = ({ device }) => {
       <div className="flex justify-around flex-col lg:flex-row items-center gap-4">
         <CartDialog />
         <MainButton
-          onClick={removeAllFromCart}
+          onClick={() => dispatch(removeAllFromCart())}
           className="px-12 disabled:opacity-50 disabled:cursor-not-allowed"
           ariaLabel="Limpar todos itens do carrinho"
           variant="white"

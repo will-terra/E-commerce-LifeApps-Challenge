@@ -37,10 +37,6 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
   const itemsPerPage = 4;
   const {
     cart,
-    removeFromCart,
-    removeAllFromCart,
-    cartTotal,
-    cartQuantity,
   } = useCart();
 
   useEffect(() => {
@@ -66,10 +62,6 @@ export const AppContextProvider: React.FC<AppProviderProps> = ({
         pagination,
         itemsPerPage,
         cart,
-        cartTotal,
-        cartQuantity,
-        removeFromCart,
-        removeAllFromCart,
       }}
     >
       {children}

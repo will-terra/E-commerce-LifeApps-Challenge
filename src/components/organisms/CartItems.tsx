@@ -1,9 +1,9 @@
-"use client";
 import CartCard from "../molecules/CartCard";
 import { useCartSelector } from "@/hooks/useCart";
+
 const CartItems: React.FC = () => {
   const cart = useCartSelector((state) => state.cart.items);
-  const cartQuantity = cart.length;
+  const cartQuantity = useCartSelector((state) => state.cart.totalQuantity);
   console.log(cart)
 
   return (
