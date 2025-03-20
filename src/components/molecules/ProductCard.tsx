@@ -16,7 +16,8 @@ const ProductCard: React.FC<Product> = (product) => {
     <div className="flex flex-col max-w-80 h-full max-h-[32rem] p-3 border border-gray-300 rounded-md  bg-gray-200">
       <div className="flex overflow-hidden w-full h-[28.125rem]">
         <Image
-          loading="lazy"
+          priority
+          fetchPriority="high"
           src={image}
           alt={description}
           width={300}
