@@ -39,9 +39,7 @@ export interface useFetchProductsHook {
       itemsPerPage: number,
       selectedValue: string
     ) => Promise<PaginationApiResponse>;
-    fetchAllProducts: () => Promise<Product[]>;
     pagination: {
-      totalPages: number;
       prevPage: number | null;
       nextPage: number | null;
       lastPage: number;

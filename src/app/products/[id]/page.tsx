@@ -1,11 +1,7 @@
-"use client";
-import { useEffect, useState, use } from "react";
-
+"use client"
+import { use } from "react";
 import ProductDetails from "@/components/organisms/ProductDetails";
-
-import { useAppContext } from "@/contexts/AppProvider";
-
-import { Product } from "@/types/Product";
+import { useProductsSelector } from "@/hooks/useProducts";
 
 interface ProductDetailsProps {
   params: Promise<{ id: string }>;
@@ -13,15 +9,7 @@ interface ProductDetailsProps {
 
 export default function Details({ params }: ProductDetailsProps) {
   const { id } = use(params);
-  const { allProducts } = useAppContext();
-  const [product, setProduct] = useState<Product | null>(null);
-
-  useEffect(() => {
-    if (allProducts) {
-      const foundProduct = allProducts.find((product) => product.id === id);
-      setProduct(foundProduct || null);
-    }
-  }, [allProducts, id]);
+  const product = useProductsSelector((state) => state.products.products.find((product) => product.id === id));
 
   return (
     <main className="py-8 bg-gray-100">

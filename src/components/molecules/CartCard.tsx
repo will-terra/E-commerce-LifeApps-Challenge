@@ -2,19 +2,22 @@ import Image from "next/image";
 
 import MainButton from "../atoms/MainButton";
 
-import { useAppContext } from "@/contexts/AppProvider";
+import { useCartDispatch } from "@/hooks/useCart";
+import { addToCart, removeFromCart } from "@/slices/cartSlice";
 
 import { CartCardProps } from "@/types/Cart";
 
 const CartCard: React.FC<CartCardProps> = ({ product }) => {
-  const { addToCart, removeFromCart } = useAppContext();
+  const dispatch = useCartDispatch();
+
   const { name, category, price, promotional_price, image, quantity } = product;
 
   return (
     <div className="flex justify-center self-center gap-5 w-full max-w-[30rem]  xl:max-w-[30rem] 2xl:max-w-[40rem] py-3 xl:py-6 pl-4 xl:pl-8 mx-4 xl:mx-0 bg-gray-200 border border-gray-500 rounded xl">
       <div className="flex w-1/2 justify-end">
         <Image
-          loading="lazy"
+          priority
+          fetchPriority="high"
           src={image}
           alt={name}
           width={200}
@@ -33,7 +36,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
         <div className="flex justify-center items-center w-fit gap-2 bg-gray-300 border border-gray-500 rounded xl px-2">
           <button
             aria-label={`Remover um ${name} do carrinho`}
-            onClick={() => removeFromCart(product)}
+            onClick={() => dispatch(removeFromCart(product))}
             disabled={quantity < 2}
             className="text-3xl mx-2 disabled:cursor-not-allowed"
           >
@@ -49,7 +52,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
           </p>
           <button
             aria-label={`Adicionar um ${name} ao carrinho`}
-            onClick={() => addToCart(product)}
+            onClick={() => dispatch(addToCart(product))}
             className="text-2xl mx-2"
           >
             +
@@ -58,7 +61,7 @@ const CartCard: React.FC<CartCardProps> = ({ product }) => {
 
         <MainButton
           ariaLabel={`Remover um ${name} do carrinho`}
-          onClick={() => removeFromCart(product)}
+          onClick={() => dispatch(removeFromCart(product))}
           variant="white"
           size="small"
           className="px-8 mt-2"

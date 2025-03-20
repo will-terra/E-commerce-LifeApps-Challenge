@@ -2,17 +2,23 @@ import { Radio, RadioGroup } from "@base-ui-components/react";
 
 import AssistButton from "../atoms/AssistButton";
 
-import { useAppContext } from "@/contexts/AppProvider";
+import { usePaginationSelector, usePaginationDispatch } from "@/hooks/usePagination";
+import { fetchPaginatedProducts, setSelectedValue } from "@/slices/paginationSlice";
 
 const FilterDesktop: React.FC = () => {
-  const { selectedValue, setSelectedValue } = useAppContext();
+  const { selectedValue } = usePaginationSelector((state) => state.pagination);
+  const dispatch = usePaginationDispatch();
+  const handleValueChange = (selectedValue: string) => {
+    dispatch(setSelectedValue(selectedValue));
+    dispatch(fetchPaginatedProducts({ page: 1, category: selectedValue }));
+  };
 
   return (
     <RadioGroup
       aria-label="Selecione um filtro para os produtos"
       name="filter"
       value={selectedValue}
-      onValueChange={(value) => setSelectedValue(value as string)}
+      onValueChange={handleValueChange}
       className="flex gap-2"
     >
       <Radio.Root value="">
@@ -51,7 +57,7 @@ const FilterDesktop: React.FC = () => {
           Tênis
         </AssistButton>
       </Radio.Root>
-    </RadioGroup>
+    </RadioGroup >
   );
 };
 

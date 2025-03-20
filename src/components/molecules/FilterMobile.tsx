@@ -2,11 +2,16 @@ import { Menu } from "@base-ui-components/react";
 
 import AssistButton from "../atoms/AssistButton";
 
-import { useAppContext } from "@/contexts/AppProvider";
+import { usePaginationSelector, usePaginationDispatch } from "@/hooks/usePagination";
+import { fetchPaginatedProducts, setSelectedValue } from "@/slices/paginationSlice";
 
 const FilterMobile: React.FC = () => {
-  const { selectedValue, setSelectedValue } = useAppContext();
-
+  const { currentPage, selectedValue } = usePaginationSelector((state) => state.pagination);
+  const dispatch = usePaginationDispatch();
+  const handleValueChange = (selectedValue: string) => {
+    dispatch(setSelectedValue(selectedValue));
+    dispatch(fetchPaginatedProducts({ page: currentPage, category: selectedValue }));
+  };
   return (
     <Menu.Root>
       <Menu.Trigger>
@@ -27,7 +32,7 @@ const FilterMobile: React.FC = () => {
             <Menu.RadioGroup
               className={"flex flex-col gap-5 mt-2 mb-4 mx-4"}
               value={selectedValue}
-              onValueChange={(value) => setSelectedValue(value as string)}
+              onValueChange={handleValueChange}
             >
               <Menu.RadioItem value="" closeOnClick>
                 <AssistButton

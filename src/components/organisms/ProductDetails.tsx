@@ -3,9 +3,10 @@ import Image from "next/image";
 import MainButton from "../atoms/MainButton";
 import CartIcon from "../atoms/CartIcon";
 
-import { useAppContext } from "@/contexts/AppProvider";
-
 import { ProductDetailsProps } from "@/types/Product";
+
+import { useCartDispatch } from "@/hooks/useCart";
+import { addToCart } from "@/slices/cartSlice";
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const {
@@ -18,13 +19,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     description,
   } = product;
 
-  const { addToCart } = useAppContext();
+  const dispatch = useCartDispatch()
 
   return (
     <section className="flex flex-col lg:flex-row justify-center m-auto gap-4 2xl:gap-16 bg-gray-100">
       <div className="flex max-w-[95%] lg:max-w-1/2  mx-4 justify-center items-center">
         <Image
-          loading="lazy"
+          priority
+          fetchPriority="high"
           src={image}
           alt={name}
           width={600}
@@ -71,7 +73,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
         <p>{description}</p>
 
         <MainButton
-          onClick={() => addToCart({ ...product })}
+          onClick={() => dispatch(addToCart(product))}
           ariaLabel={`Adicionar ${name} ao carrinho`}
           variant="white"
           size="large"

@@ -1,8 +1,8 @@
-"use client";
-import { useAppContext } from "@/contexts/AppProvider";
+"use client"
+import { useCartSelector } from "@/hooks/useCart";
 
 const CartCounter: React.FC = () => {
-  const { cartQuantity } = useAppContext();
+  const cartQuantity = useCartSelector((state) => state.cart.totalQuantity);
 
   return (
     <>
