@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchPaginatedProducts = createAsyncThunk(
     'pagination/fetchPaginatedProducts',
-    async ({ page, perPage, category }: { page: number, perPage?: number, category: string }, { dispatch, getState }) => {
+    async ({ page, perPage, category }: { page: number, perPage?: number, category: string }) => {
         const effectivePerPage = perPage || 4;
         const response = await fetch(`https://api-prova-frontend.solucoeslifeapps.com.br/products?_page=${page}&_per_page=${effectivePerPage}&category=${category}`);
         const data = await response.json();
