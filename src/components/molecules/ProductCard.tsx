@@ -14,14 +14,14 @@ const ProductCard: React.FC<Product> = (product) => {
 
   return (
     <div className="flex flex-col max-w-80 h-full max-h-[32rem] p-3 border border-gray-300 rounded-md  bg-gray-200">
-      <div className="flex h-full overflow-hidden ">
+      <div className="flex overflow-hidden w-full h-[28.125rem]">
         <Image
           loading="lazy"
           src={image}
           alt={description}
           width={300}
-          height={250}
-          className={"object-cover place-self-center"}
+          height={450}
+          style={{ objectFit: "cover", placeSelf: "center" }}
         />
       </div>
       <div className="flex flex-col justify-between">
