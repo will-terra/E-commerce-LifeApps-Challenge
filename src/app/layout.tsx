@@ -25,6 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="global-html" style={{ scrollBehavior: 'auto' }}>
+      <head>
+        <link rel="preconnect" href="https://api-prova-frontend.solucoeslifeapps.com.br" />
+        <link rel="preconnect" href="https://va.vercel-scripts.com" />
+      </head>
       <body className="h-full flex flex-col bg-gray-100">
         <ClientProvider>
           <Header />
