@@ -9,13 +9,13 @@ import Header from "@/components/atoms/Header";
 import Footer from "@/components/molecules/Footer";
 import NavBar from "@/components/organisms/NavBar";
 
-
-import { AppContextProvider } from "@/contexts/AppProvider";
-
-
 export const metadata: Metadata = {
   title: "NEISH",
   description: "Plataforma de vendas de roupas",
+  other: {
+    'scroll-restoration': 'true',
+    'cache-control': 'no-cache, must-revalidate, post-check=0, pre-check=0',
+  },
 };
 
 export default function RootLayout({
@@ -24,21 +24,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="global-html">
-      <ClientProvider>
-        <AppContextProvider>
-          <body className="h-[100dvh] flex flex-col bg-gray-100">
-            <Header />
-            <div className="sticky top-0 z-50">
-              <NavBar />
-            </div>
-            <div className="Root flex-grow">
-              {children} <SpeedInsights />
-            </div>
-            <Footer />
-          </body>
-        </AppContextProvider>
-      </ClientProvider>
+    <html lang="pt-BR" className="global-html" style={{ scrollBehavior: 'auto' }}>
+      <body className="h-full flex flex-col bg-gray-100">
+        <ClientProvider>
+          <Header />
+          <div className="sticky top-0 z-50">
+            <NavBar />
+          </div>
+          <div className="Root h-full">
+            {children} <SpeedInsights />
+          </div>
+          <Footer />
+        </ClientProvider>
+      </body>
     </html>
   );
 }
