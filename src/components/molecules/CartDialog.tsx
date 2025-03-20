@@ -1,3 +1,4 @@
+"use client"
 import { Dialog } from "@base-ui-components/react";
 
 import AssistButton from "../atoms/AssistButton";

@@ -1,3 +1,4 @@
+"use client"
 import { useCartSelector } from "@/hooks/useCart";
 
 const CartCounter: React.FC = () => {

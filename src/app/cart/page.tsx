@@ -1,4 +1,3 @@
-"use client";
 import CartItems from "@/components/organisms/CartItems";
 import CartSummary from "@/components/organisms/CartSummary";
 

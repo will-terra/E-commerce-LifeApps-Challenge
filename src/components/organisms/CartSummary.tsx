@@ -1,3 +1,4 @@
+"use client"
 import MainButton from "../atoms/MainButton";
 import CartDialog from "../molecules/CartDialog";
 

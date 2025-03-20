@@ -1,10 +1,10 @@
+"use client"
 import CartCard from "../molecules/CartCard";
 import { useCartSelector } from "@/hooks/useCart";
 
 const CartItems: React.FC = () => {
   const cart = useCartSelector((state) => state.cart.items);
   const cartQuantity = useCartSelector((state) => state.cart.totalQuantity);
-  console.log(cart)
 
   return (
     <div className="flex flex-col w-full gap-4  px-4 lg:px-0 ">

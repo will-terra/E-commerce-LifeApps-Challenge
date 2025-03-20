@@ -1,3 +1,4 @@
+"use client"
 import { use } from "react";
 import ProductDetails from "@/components/organisms/ProductDetails";
 import { useProductsSelector } from "@/hooks/useProducts";
