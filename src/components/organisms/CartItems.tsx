@@ -1,5 +1,3 @@
-"use client"
-
 import CartCard from "../molecules/CartCard";
 import { useCartSelector } from "@/hooks/useCart";
 
