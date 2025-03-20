@@ -29,16 +29,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://api-prova-frontend.solucoeslifeapps.com.br" />
         <link rel="preconnect" href="https://va.vercel-scripts.com" />
       </head>
-      <body className="h-full flex flex-col bg-gray-100">
+      <body className="h-screen">
         <ClientProvider>
-          <Header />
-          <div className="sticky top-0 z-50">
-            <NavBar />
+          <div className="flex flex-col h-full bg-gray-100">
+            <Header />
+            <div className="sticky top-0 z-50">
+              <NavBar />
+            </div>
+            <div className="Root grow">
+              {children} <SpeedInsights />
+            </div>
+            <Footer />
           </div>
-          <div className="Root h-full">
-            {children} <SpeedInsights />
-          </div>
-          <Footer />
         </ClientProvider>
       </body>
     </html>
